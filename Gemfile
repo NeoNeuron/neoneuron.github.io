@@ -1,3 +1,7 @@
+# run 
+#  bundle exec jekyll serve --livereload
+# to activate the web preview while editing.
+#
 source "https://rubygems.org"
 
 gem "github-pages", group: :jekyll_plugins
