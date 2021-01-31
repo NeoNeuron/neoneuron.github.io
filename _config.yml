@@ -101,7 +101,7 @@ defaults:
       author_profile: true
       read_time: true
       comments: true
-      share: true
+      # share: true  # enable sharing link to social media
       related: true
   # _pages
   - scope:
