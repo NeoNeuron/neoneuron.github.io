@@ -90,6 +90,8 @@ cd nestml
 python setup.py install --user
 ```
 
+**Note:** `antlr4-python3-runtime==4.10` will lead to a **BUG**. `4.9.3` is recommended.
+
 #### Testing (Optional)
 After installation, correct operation can be tested by:
 ```bash
