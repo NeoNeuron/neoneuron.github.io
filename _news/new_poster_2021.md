@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "New poster and oral presentation at CCCN :sparkles: :smile:"
+title: "New poster and oral presentation on CCCN2021 :sparkles: :smile:"
 date: 2021-06-12 18:00:00-0800
+categories: poster
+tags: visual-attention, V1, rate-model, differential evolution, MFT
 ---
 
 #### Modeling attentional modulated spike count correlation in macaque V1.
