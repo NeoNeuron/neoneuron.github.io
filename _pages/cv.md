@@ -1,9 +1,8 @@
 ---
-layout: page
-title: CV
+layout: cv
+permalink: /cv/
+title: cv
 nav: true
-dropdown: true
-children: 
-    - title: PDF
-      permalink: /assets/pdf/CV_Kai_Chen.pdf
+nav_order: 3
+cv_pdf: CV_Kai_Chen.pdf
 ---

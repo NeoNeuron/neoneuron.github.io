@@ -7,6 +7,7 @@ subtitle: #<a href='https://ins.sjtu.edu.cn'>Institute of Natural Science</a>, <
 profile:
   align: right
   image: anime-avatar.png
+  image_cicular: false # crops the image to make it circular
   address: >
     <p>Applied Math PhD Candidate</p>
     <p>Computational Neuroscienist</p>
