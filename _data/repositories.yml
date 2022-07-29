@@ -1,12 +1,9 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - neoneuron
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - neoneuron/minfo
+  - neoneuron/SJTU-11th-CNS-Winter-School
+  - LCNS-SJTU/lcns-sjtu.github.io
+  - neoneuron/professional-workshop-3
+  - neoneuron/pnet
