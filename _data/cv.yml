@@ -45,6 +45,9 @@
   type: time_table
   contents:
     - year: 2022
+      title: "<u>[ORAL]</u>: Quantitative relations among causality measures with applications to nonlinear pulse-output network reconstruction"
+      description: CSIAM2022, online
+    - year: 2022
       title: "<u>[POSTER]</u>: Quantitative relations among causality measures with applications to nonlinear pulse-output network reconstruction"
       description: CCCN2022, online
     - year: 2021
