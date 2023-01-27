@@ -71,8 +71,12 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 github_username: NeoNeuron
 gitlab_username: # your GitLab user name
 twitter_username: kchen513
+mastodon_username: # your mastodon instance+username in the format instance.tld/@username
 linkedin_username: kai-chen-a35666a6 
+telegram_username: # your Telegram user name
 scholar_userid: # your Google Scholar ID
+semanticscholar_id: # your Semantic Scholar ID
+whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
 orcid_id: # your ORCID ID
 medium_username: # your Medium username
 quora_username: # your Quora username
@@ -83,7 +87,16 @@ work_url: # work page URL
 keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
 dblp_url: # your DBLP profile url
-stackoverflow_id: #your stackoverflow id
+stackoverflow_id: # your stackoverflow id
+kaggle_id: # your kaggle id
+lastfm_id: # your lastfm id
+spotify_id: # your spotify id
+pinterest_id: # your pinterest id
+unsplash_id: # your unsplash id
+instagram_id: # your instagram id
+facebook_id: # your facebook id
+youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
+discord_id: # your discord id (18-digit unique numerical identifier)
 
 contact_note: >
   Feel free to reach through EMAIL.
@@ -92,7 +105,7 @@ contact_note: >
 # Analytics and search engine verification
 # -----------------------------------------------------------------------------
 
-google_analytics: G-QB3MTH4R4K # your google-analytics ID (format: UA-XXXXXXXXX)
+google_analytics: G-QB3MTH4R4K # your Goole Analytics measurement ID (format: G-XXXXXXXXXX)
 panelbear_analytics:  # panelbear analytics site ID (format: XXXXXXXXX)
 
 google_site_verification:  # your google-site-verification ID (Google Search Console)
@@ -111,7 +124,23 @@ permalink: /blog/:year/:title/
 pagination:
   enabled: true
 
-# Comments
+# Giscus comments (RECOMMENDED)
+# Follow instructions on https://giscus.app/ to setup for your repo to fill out
+# the information below.
+giscus:
+  repo: alshedivat/al-folio      # <your-github-user-name>/<your-github-repo-name>
+  repo_id: MDEwOlJlcG9zaXRvcnk2MDAyNDM2NQ==
+  category: Comments             # name of the category under which discussions will be created
+  category_id: DIC_kwDOA5PmLc4CTBt6
+  mapping: title                 # identify discussions by post title
+  strict: 1                      # use strict identification mode
+  reactions_enabled: 1           # enable (1) or disable (0) emoji reactions
+  input_position: bottom         # whether to display input form below (bottom) or above (top) the comments
+  theme: preferred_color_scheme  # name of the color scheme (preferred works well with al-folio light/dark mode)
+  emit_metadata: 0
+  lang: en
+
+# Disqus comments (DEPRECATED)
 disqus_shortname: al-folio # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
@@ -179,7 +208,7 @@ plugins:
   - jekyll-paginate-v2
   - jekyll/scholar
   - jekyll-sitemap
-  - jekyll-target-blank
+  - jekyll-link-attributes
   - jekyll-twitter-plugin
   - jemoji
 
@@ -222,8 +251,8 @@ display_tags: [] # this tags will be dispalyed on the front page of your blog
 
 scholar:
 
-  last_name: Chen
-  first_name: Kai
+  last_name: [Chen]
+  first_name: [Kai, K.]
 
   style: apa
   locale: en
@@ -249,10 +278,24 @@ scholar:
 
 
 # Filter out certain bibtex entry keywords used internally from the bib output
-filtered_bibtex_keywords: [abbr, abstract, arxiv, bibtex_show, html, pdf, selected, supp, blog, code, poster, slides, website, preview]
+filtered_bibtex_keywords: [abbr, abstract, arxiv, bibtex_show, html, pdf, selected, supp, blog, code, poster, slides, website, preview, altmetric]
 
-# Maximum number of authors to be shown, other authors will be visible on hover, leave blank to show all authors
-max_author_limit: 3
+# Maximum number of authors to be shown for each publication (more authors are visible on click)
+max_author_limit: 3  # leave blank to always show all authors
+more_authors_animation_delay: 10  # more authors are revealed on click using animation; smaller delay means faster animation
+
+
+# -----------------------------------------------------------------------------
+# Jekyll Link Attributes
+# -----------------------------------------------------------------------------
+
+# These are the defaults
+external_links:
+  enabled: true
+  rel: external nofollow noopener
+  target: _blank
+  exclude:
+
 
 # -----------------------------------------------------------------------------
 # Responsive WebP Images
@@ -302,7 +345,7 @@ enable_navbar_social:       false  # enables displaying social links in the
 enable_project_categories:  true   # enables categorization of projects into
                                    # multiple categories
 enable_medium_zoom:         true   # enables image zoom feature (as on medium.com)
-
+enable_progressbar:         true   # enables a horizontal progress bar linked to the vertical scroll position
 
 # -----------------------------------------------------------------------------
 # Library versions
