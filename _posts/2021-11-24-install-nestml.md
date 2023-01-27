@@ -2,8 +2,9 @@
 layout: post
 title: NESTML Installation
 date: 2021-11-24
-categories: coding
-tags: nest-simulator
+categories: code
+tags: NEST-simulator
+giscus_comments: true
 ---
 
 ## Get started with `NEST` and `NESTML`

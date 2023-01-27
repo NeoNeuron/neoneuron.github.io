@@ -6,7 +6,7 @@ categories: tech
 tags: router-setting
 ---
 
-This is the reminder note for setup router bridge mode.
+This is a note for router bridge mode setups.
 
 ## Setup main router
 
@@ -24,4 +24,4 @@ Follow the default instruction of router setups.
 8. Save all settings and restart the router. *Recommended:choose the same channel for bridge router as the main ones.*
 9. Reconnect to the bridge router.
 
-## ENJOY your day!
+**ENJOY your day!**
