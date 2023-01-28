@@ -6,8 +6,6 @@ categories: Symposium
 tags: causality, correlation, mutual-information, Granger-causality, transfer-entropy, neural-networks 
 ---
 
-#### 不同因果推断方法间的定量关系以及其在脉冲输出网络重构中的运用
-
 {% include figure.html path='assets/img/CSIAM2022.png' class="img-fluid" %}
 
 [Link](https://meeting.csiam.org.cn/#/2022/) to CSIAM2022.
