@@ -1,8 +1,8 @@
 ---
 layout: about
-title: about
+title: titles.about
 permalink: /
-subtitle: #<a href='https://ins.sjtu.edu.cn'>Institute of Natural Science</a>, <a href='https://www.sjtu.edu.cn'><b>SJTU</b></a>
+subtitle:
 
 profile:
   align: right

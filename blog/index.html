@@ -1,6 +1,6 @@
 ---
 layout: default
-title: blog
+title: titles.blog
 pagination:
   enabled: true
   collection: posts
@@ -16,8 +16,8 @@ pagination:
 <div class="post">
 
   <div class="header-bar">
-    <h1>{{ site.blog_name }}</h1>
-    <h2>{{ site.blog_description }}</h2>
+    <h1>{% t descriptions.blog_name %}</h1>
+    <h2>{% t descriptions.blog %}</h2>
   </div>
 
   {% if site.display_tags %}
@@ -25,7 +25,7 @@ pagination:
     <ul class="p-0 m-0">
       {% for tag in site.display_tags %}
         <li>
-          <i class="fas fa-hashtag fa-sm"></i> <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">{{ tag }}</a>
+          <i class="fas fa-hashtag fa-sm"></i> <a href="{{ tag | slugify | prepend: '/blog/tag/' | prepend: site.baseurl }}">{{ tag }}</a>
         </li>
         {% unless forloop.last %}
           <p>&bull;</p>

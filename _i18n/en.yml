@@ -1,0 +1,31 @@
+titles:
+  about: about
+  blog: blog
+  cv: cv
+  news: news
+  projects: projects
+  publications: publications
+  repositories: repositories
+  teaching: teaching
+  selected_publications: selected publications
+  submenus: submenus
+  unk: page not found
+descriptions:
+  archive-category: an archive of posts in this category
+  archive-tag: an archive of posts with this tag
+  archive-year: an archive of posts from this year
+  blog_name: Midyard of My Mind
+  blog: collecting pieces of sparkling ideas
+  projects: A growing collection of your cool projects.
+  publications: collection of my publications
+  repositories: Please feel free to use them and raise issues if any questions.
+  teaching: Materials for courses you taught. Replace this text with your description.
+  unk: Looks like there has been a mistake. Nothing exists here.
+pagination:
+  newer: Newer
+  older: Older
+projects:
+  titles:
+    project1: Project 1
+    project2: Project 2
+    project3: Project 3

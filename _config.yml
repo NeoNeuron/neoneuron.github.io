@@ -204,6 +204,7 @@ plugins:
   - jekyll-email-protect
   - jekyll-feed
   - jekyll-imagemagick
+  - jekyll-multiple-languages-plugin
   - jekyll-minifier
   - jekyll-paginate-v2
   - jekyll/scholar
@@ -218,6 +219,13 @@ defaults:
       path: "assets/**/*.*"
     values:
       sitemap: false
+
+# -----------------------------------------------------------------------------
+# Jekyll multiple languages settings
+# -----------------------------------------------------------------------------
+
+languages: ["en", "cn"]
+default_locale_in_subfolder: false
 
 # -----------------------------------------------------------------------------
 # Jekyll Minifier
