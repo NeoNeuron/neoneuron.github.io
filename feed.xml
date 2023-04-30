@@ -1,1 +1,180 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neoneuron.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://neoneuron.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2023-02-17T08:56:36+00:00</updated><id>https://neoneuron.github.io/feed.xml</id><title type="html">blank</title><subtitle>Personal website of Kai Chen. Here, you may find its ideas about life, research, and technical stuffs. ENJOY the life! </subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neoneuron.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neoneuron.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-04-30T15:44:25+00:00</updated><id>https://neoneuron.github.io/feed.xml</id><title type="html">blank</title><subtitle>Personal website of Kai Chen. Here, you may find its ideas about life, research, and technical stuffs. ENJOY the life!
+</subtitle><entry><title type="html">NESTML Installation</title><link href="https://neoneuron.github.io/blog/2021/install-nestml/" rel="alternate" type="text/html" title="NESTML Installation" /><published>2021-11-24T00:00:00+00:00</published><updated>2021-11-24T00:00:00+00:00</updated><id>https://neoneuron.github.io/blog/2021/install-nestml</id><content type="html" xml:base="https://neoneuron.github.io/blog/2021/install-nestml/"><![CDATA[<h2 id="get-started-with-nest-and-nestml">Get started with <code class="language-plaintext highlighter-rouge">NEST</code> and <code class="language-plaintext highlighter-rouge">NESTML</code></h2>
+
+<h3 id="install-latest-version-of-cmake-need-sudo-authorization">Install latest version of <code class="language-plaintext highlighter-rouge">cmake</code> (need <code class="language-plaintext highlighter-rouge">sudo</code> authorization)</h3>
+
+<p><em>Reference: <a href="https://graspingtech.com/upgrade-cmake/">https://graspingtech.com/upgrade-cmake/</a></em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>build-essential libssl-dev
+wget https://github.com/Kitware/CMake/releases/download/v3.22.0/cmake-3.22.0.tar.gz
+<span class="nb">tar</span> <span class="nt">-zxvf</span> cmake-3.22.0.tar.gz
+<span class="nb">cd </span>cmake-3.22.0
+./bootstrap
+make 
+<span class="nb">sudo </span>make <span class="nb">install</span> 
+</code></pre></div></div>
+
+<h3 id="install-nest-v31">Install <code class="language-plaintext highlighter-rouge">NEST</code> <code class="language-plaintext highlighter-rouge">v3.1</code></h3>
+
+<p><em>Reference: <a href="https://nest-simulator.readthedocs.io/en/stable/installation/linux_install.html">https://nest-simulator.readthedocs.io/en/stable/installation/linux_install.html</a></em></p>
+
+<p><strong>WARNING</strong>: Directly install NEST v2.20.1 from <code class="language-plaintext highlighter-rouge">pip</code> or <code class="language-plaintext highlighter-rouge">conda</code> might leads to <a href="https://github.com/nest/nestml/issues/670">this issue</a>.</p>
+
+<ul>
+  <li>Create a new Python environment.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  conda create <span class="nt">-n</span> nestml <span class="nv">python</span><span class="o">=</span>3.9 <span class="nt">-y</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Install necessary dependence.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  conda activate nestml
+  conda <span class="nb">install</span> <span class="nt">-y</span> numpy cython matplotlib ipython scipy
+  conda <span class="nb">install</span> <span class="nt">-y</span> pytest pytest-xdist pytest-timeout
+  pip <span class="nb">install </span>junitparser
+</code></pre></div>    </div>
+  </li>
+  <li>Download <a href="https://github.com/nest/nest-simulator/releases/tag/v3.1">latest NEST package</a>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  wget <span class="nt">-O</span> nest-simulator-3.1.tar.gz https://codeload.github.com/nest/nest-simulator/tar.gz/refs/tags/v3.1
+</code></pre></div>    </div>
+  </li>
+  <li>Unpack the tarball
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">tar</span> <span class="nt">-xzvf</span> nest-simulator-3.1.tar.gz
+</code></pre></div>    </div>
+  </li>
+  <li>Create a build directory
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">mkdir </span>nest-simulator-3.1-build
+</code></pre></div>    </div>
+  </li>
+  <li>Change to the build directory:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">cd </span>nest-simulator-3.1-build
+</code></pre></div>    </div>
+  </li>
+  <li>Configure NEST. You may need additional cmake options (see <a href="https://nest-simulator.readthedocs.io/en/stable/installation/cmake_options.html">CMake Options for NEST</a>).
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  cmake ../nest-simulator-3.1/
+</code></pre></div>    </div>
+  </li>
+  <li>Compile and install NEST:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  make
+  make <span class="nb">install
+  </span>make installcheck
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>If there is no failure occurs in installcheck, then NEST should now be successfully installed in your active Python environment.</p>
+
+<h3 id="install-the-latest-development-version-of-nestml">Install the latest development version of <code class="language-plaintext highlighter-rouge">NEST::ml</code></h3>
+
+<p><em>Reference: <a href="https://nest-simulator.readthedocs.io/en/stable/installation/linux_install.html">https://nestml.readthedocs.io/en/latest/installation.html</a></em></p>
+
+<p>To obtain the latest development version, clone directly from the master branch of the GitHub repository:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/nest/nestml
+</code></pre></div></div>
+
+<p>Install into your current Python environment using:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>nestml
+python setup.py <span class="nb">install</span> <span class="nt">--user</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> <code class="language-plaintext highlighter-rouge">antlr4-python3-runtime==4.10</code> will lead to a <strong>BUG</strong>. <code class="language-plaintext highlighter-rouge">4.9.3</code> is recommended.</p>
+
+<h4 id="testing-optional">Testing (Optional)</h4>
+<p>After installation, correct operation can be tested by:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python setup.py <span class="nb">test</span>
+</code></pre></div></div>
+<p><em>Note that, tests.docstring_comment_test might fail. If so, please ignore it which won’t affect your usage.</em></p>
+
+<h3 id="install-example-nestml-file">Install example <code class="language-plaintext highlighter-rouge">*.nestml</code> file</h3>
+
+<p><em>Reference: <a href="https://nest-simulator.readthedocs.io/en/stable/installation/linux_install.html">https://nestml.readthedocs.io/en/latest/tutorials/izhikevich/nestml_izhikevich_tutorial.html</a></em></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">nest</span>
+<span class="kn">from</span> <span class="n">pynestml.frontend.pynestml_frontend</span> <span class="kn">import</span> <span class="n">to_nest</span><span class="p">,</span> <span class="n">install_nest</span>
+
+<span class="n">NEST_SIMULATOR_INSTALL_LOCATION</span> <span class="o">=</span> <span class="n">nest</span><span class="p">.</span><span class="n">ll_api</span><span class="p">.</span><span class="nf">sli_func</span><span class="p">(</span><span class="s">"statusdict/prefix ::"</span><span class="p">)</span>
+
+<span class="nf">to_nest</span><span class="p">(</span><span class="n">input_path</span><span class="o">=</span><span class="s">"izhikevich_solution.nestml"</span><span class="p">,</span> <span class="c1"># replace with path of your own nestml file
+</span>        <span class="n">target_path</span><span class="o">=</span><span class="s">"~/tmp/nestml-component"</span><span class="p">,</span>
+        <span class="n">logging_level</span><span class="o">=</span><span class="s">"ERROR"</span><span class="p">)</span>
+
+<span class="nf">install_nest</span><span class="p">(</span><span class="s">"~/tmp/nestml-component"</span><span class="p">,</span> <span class="n">NEST_SIMULATOR_INSTALL_LOCATION</span><span class="p">)</span>
+
+<span class="n">nest</span><span class="p">.</span><span class="nc">Install</span><span class="p">(</span><span class="s">"nestmlmodule"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="instantiate-model-in-nest-simulator-and-run">Instantiate model in NEST Simulator and run</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplt</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">nest</span>
+
+<span class="n">nest</span><span class="p">.</span><span class="nf">set_verbosity</span><span class="p">(</span><span class="s">"M_WARNING"</span><span class="p">)</span>
+<span class="n">nest</span><span class="p">.</span><span class="nc">ResetKernel</span><span class="p">()</span>
+
+<span class="n">neuron</span> <span class="o">=</span> <span class="n">nest</span><span class="p">.</span><span class="nc">Create</span><span class="p">(</span><span class="s">"izhikevich_tutorial"</span><span class="p">)</span> <span class="c1"># replace with name of your own model
+</span><span class="n">voltmeter</span> <span class="o">=</span> <span class="n">nest</span><span class="p">.</span><span class="nc">Create</span><span class="p">(</span><span class="s">"voltmeter"</span><span class="p">)</span>
+
+<span class="n">voltmeter</span><span class="p">.</span><span class="nf">set</span><span class="p">({</span><span class="s">"record_from"</span><span class="p">:</span> <span class="p">[</span><span class="s">"v"</span><span class="p">,</span> <span class="s">"u"</span><span class="p">]})</span>
+<span class="n">nest</span><span class="p">.</span><span class="nc">Connect</span><span class="p">(</span><span class="n">voltmeter</span><span class="p">,</span> <span class="n">neuron</span><span class="p">)</span>
+
+<span class="n">cgs</span> <span class="o">=</span> <span class="n">nest</span><span class="p">.</span><span class="nc">Create</span><span class="p">(</span><span class="s">'dc_generator'</span><span class="p">)</span>
+<span class="n">cgs</span><span class="p">.</span><span class="nf">set</span><span class="p">({</span><span class="s">"amplitude"</span><span class="p">:</span> <span class="mf">25.</span><span class="p">})</span>
+<span class="n">nest</span><span class="p">.</span><span class="nc">Connect</span><span class="p">(</span><span class="n">cgs</span><span class="p">,</span> <span class="n">neuron</span><span class="p">)</span>
+
+<span class="n">sr</span> <span class="o">=</span> <span class="n">nest</span><span class="p">.</span><span class="nc">Create</span><span class="p">(</span><span class="s">"spike_recorder"</span><span class="p">)</span>
+<span class="n">nest</span><span class="p">.</span><span class="nc">Connect</span><span class="p">(</span><span class="n">neuron</span><span class="p">,</span> <span class="n">sr</span><span class="p">)</span>
+
+<span class="n">nest</span><span class="p">.</span><span class="nc">Simulate</span><span class="p">(</span><span class="mf">250.</span><span class="p">)</span>
+
+<span class="n">spike_times</span> <span class="o">=</span> <span class="n">nest</span><span class="p">.</span><span class="nc">GetStatus</span><span class="p">(</span><span class="n">sr</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="s">'events'</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s">'times'</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">plot</span><span class="p">(</span><span class="n">voltmeter</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">"events"</span><span class="p">)[</span><span class="s">"times"</span><span class="p">],</span> <span class="n">voltmeter</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">"events"</span><span class="p">)[</span><span class="s">"v"</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">plot</span><span class="p">(</span><span class="n">voltmeter</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">"events"</span><span class="p">)[</span><span class="s">"times"</span><span class="p">],</span> <span class="n">voltmeter</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">"events"</span><span class="p">)[</span><span class="s">"u"</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">scatter</span><span class="p">(</span><span class="n">spike_times</span><span class="p">,</span> <span class="mi">30</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="nf">ones_like</span><span class="p">(</span><span class="n">spike_times</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s">"d"</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s">"orange"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="p">.</span><span class="mi">8</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">99</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">_ax</span> <span class="ow">in</span> <span class="n">ax</span><span class="p">:</span>
+    <span class="n">_ax</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">set_ylabel</span><span class="p">(</span><span class="s">"v [mV]"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">set_ylabel</span><span class="p">(</span><span class="s">"u"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="nf">set_xlabel</span><span class="p">(</span><span class="s">"Time [ms]"</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="s">'test.png'</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="row">
+    <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/figures/2021-11-24-test-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/figures/2021-11-24-test-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/figures/2021-11-24-test-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/figures/2021-11-24-test.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+</div>]]></content><author><name></name></author><category term="code" /><category term="NEST-simulator" /><summary type="html"><![CDATA[Get started with NEST and NESTML]]></summary></entry><entry><title type="html">Set Router Bridge Mode</title><link href="https://neoneuron.github.io/blog/2021/router-bridge/" rel="alternate" type="text/html" title="Set Router Bridge Mode" /><published>2021-01-30T00:00:00+00:00</published><updated>2021-01-30T00:00:00+00:00</updated><id>https://neoneuron.github.io/blog/2021/router-bridge</id><content type="html" xml:base="https://neoneuron.github.io/blog/2021/router-bridge/"><![CDATA[<p>This is a note for router bridge mode setups.</p>
+
+<h2 id="setup-main-router">Setup main router</h2>
+
+<p>Follow the default instruction of router setups.</p>
+
+<h2 id="setup-bridging-router">Setup bridging router</h2>
+
+<ol>
+  <li>Connect the WIFI of router, and open <code class="language-plaintext highlighter-rouge">192.168.1.1</code> from your browser.</li>
+  <li>Set the LAN IP address to <code class="language-plaintext highlighter-rouge">192.168.1.100</code>, and restart the router.</li>
+  <li>Open the configuration website with new IP <code class="language-plaintext highlighter-rouge">192.168.1.100</code>.</li>
+  <li>Turn off the DHCP server.</li>
+  <li>Set a proper range for address pool. Note that it should not cover the LAN IP address you set previously.</li>
+  <li>Go to wireless setting to open WDS. Scan the AP list and select the main router.</li>
+  <li>Enter the password to bridge to the main router.</li>
+  <li>Save all settings and restart the router. <em>Recommended:choose the same channel for bridge router as the main ones.</em></li>
+  <li>Reconnect to the bridge router.</li>
+</ol>
+
+<p><strong>ENJOY your day!</strong></p>]]></content><author><name></name></author><category term="tech" /><category term="router-setting" /><summary type="html"><![CDATA[This is a note for router bridge mode setups.]]></summary></entry></feed>

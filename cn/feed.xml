@@ -1,1 +1,342 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="cn"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neoneuron.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://neoneuron.github.io/" rel="alternate" type="text/html" hreflang="cn"/><updated>2023-02-17T08:56:51+00:00</updated><id>https://neoneuron.github.io/feed.xml</id><title type="html">blank</title><subtitle>Personal website of Kai Chen. Here, you may find its ideas about life, research, and technical stuffs. ENJOY the life! </subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="cn"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neoneuron.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neoneuron.github.io/" rel="alternate" type="text/html" hreflang="cn" /><updated>2023-04-30T15:44:27+00:00</updated><id>https://neoneuron.github.io/feed.xml</id><title type="html">blank</title><subtitle>Personal website of Kai Chen. Here, you may find its ideas about life, research, and technical stuffs. ENJOY the life!
+</subtitle><entry><title type="html">神经元网络Fokker Planck方程</title><link href="https://neoneuron.github.io/cn/blog/2023/FPE-and-NMM/" rel="alternate" type="text/html" title="神经元网络Fokker Planck方程" /><published>2023-02-10T00:00:00+00:00</published><updated>2023-02-10T00:00:00+00:00</updated><id>https://neoneuron.github.io/cn/blog/2023/FPE-and-NMM</id><content type="html" xml:base="https://neoneuron.github.io/cn/blog/2023/FPE-and-NMM/"><![CDATA[<div class="l-page-outset">
+给定$N$个兴奋性LIF神经元，将他们依照一个固定的概率$p$随机链接构成一个网络，其中每个神经元的细胞跨膜电压可以用如下方程描述：
+$$
+\begin{equation}
+    \begin{aligned}
+       \frac{dV_i}{dt} = -\frac{g_l}{C_m}(V_i-V_l) + \frac{I_\mathrm{ext}}{C_m} + \sum_j^N\sum_k w_{ij}\delta(t-t_j^k),
+    \end{aligned}
+    \label{eq:lif}
+\end{equation}
+$$
+其中$g_l$，$C_m$，$V_l$分别为神经元的电导，电容和漏电电位，$I_\mathrm{ext}$为外部输入电流，$w_{ij}$为神经元$i$和$j$之间的作用强度，即神经元$j$接收到来自神经元$i$的一个脉冲输入后电压的将上升$w_{ij}$，而$t_j^k$为神经元$j$的第$k$次脉冲发放时间。下面我们假设，网络中所有的神经元都是接受相同的电流输入，且不同神经元之间的作用强度$w_{ij}= w$，均相同。由于所有神经元在网络中的地位都是相同的，与其通过$N$个相互耦合的常微分方程来刻画网络中所有神经元在任意$t$时刻的电压状态$V_i$，不如统计一下每个$t$时刻处于不同电压值的神经元的数量。若将LIF神经元的静息电位$V_\text{r}$到阈值电位$V_\theta$，平均分分成长度为$\Delta V$的等间隔小区间，统计$t$时刻电压值落在$[V-\Delta V/2,V+\Delta V/2)$区间内的神经元个数，$n(V,t)$，则落在该区间内的神经元数量的概率为：
+$$
+\begin{equation}
+P(V,t) = \frac{n(V,t)}{N}.
+\end{equation}
+$$
+根据最朴素的神经元数目守恒的原则，我们下面简单分析一下，在$t+\Delta t$时刻，$P(V,t+\Delta t)$将会是多少。神经元膜电位的变化由\ref{eq:lif}决定，因此区间$[V-\Delta V/2, V+\Delta V/2)$内神经元数目的增加由三个部分贡献。第一，从$[V-3\Delta V/2, V-\Delta V/2)$转移到$[V-\Delta V/2, V+\Delta V/2)$的神经元数量，由外加电流$I_\mathrm{ext}$的强度决定，可以由如下方程描述：
+$$
+\begin{equation}
+P(V-\Delta V, t)\frac{I_\mathrm{ext}}{C_m}\Delta t.
+\end{equation}
+$$
+
+第二，从$[V-\Delta V/2, V+\Delta V/2)$转移到$[V+\Delta V/2, V+3\Delta V/2)$的神经元数量，由神经元漏电流的强度与当前神经元的膜电位决定，可以由如下方程描述：
+
+$$
+\begin{equation}
+P(V+\Delta V, t)\frac{g_l}{C_m}(V+\Delta V-V_l)\Delta t.
+\end{equation}
+$$
+
+第三，其他神经元放电所产生的突触电流，公式\ref{eq:lif}中的等式右端第三项。由于网络中神经元的发放时间是随机的，不妨将其视为平均放电率相同的Poisson过程。由此，我们统计平均单位时间内每个神经元接收到的突触发放电流数目为$\nu(t)$，其中
+$$
+\nu(t) = \frac{1}{\Delta}\int\limits_{t-\Delta t/2}^{t+\Delta t/2}\sum_{k=1}^N\delta(\tau-t_k)d\tau.
+$$
+
+由于突触后膜电位在接收到输入后会瞬时增加$w$，因此，突触输入将使得$[V-\Delta V/2, V+\Delta V/2)$区间内神经元数目增加：
+$$
+\begin{equation}
+\nu(t)\Delta t \cdot P(V-w, t)\cdot \Delta V.
+\end{equation}
+$$
+
+类似的，从$[V-\Delta V/2, V+\Delta V/2]$流出的神经元数量，如下方程描述：
+
+$$
+\begin{equation}
+    \begin{aligned}
+        \left[V-\frac{\Delta V}{2}, V+\frac{\Delta V}{2}\right)\to\left[V-\frac{3\Delta V}{2}, V-\frac{\Delta V}{2}\right): &amp;\quad P(V, t)\frac{g_l}{C_m}(V-V_l)\Delta t,\\
+        \left[V-\frac{\Delta V}{2}, V+\frac{\Delta V}{2}\right)\to\left[V+\frac{\Delta V}{2}, V+\frac{3\Delta V}{2}\right): &amp;\quad P(V, t)\frac{I_\mathrm{ext}}{C_m}\Delta t,\\
+        \left[V-\frac{\Delta V}{2}, V+\frac{\Delta V}{2}\right)\to\left[V+w-\frac{\Delta V}{2}, V+w+\frac{\Delta V}{2}\right): &amp;\quad \nu(t)\Delta t \cdot P(V, t)\Delta V.\\
+    \end{aligned}
+\end{equation}
+$$
+
+<div class="row">
+    <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/cn/assets/figures/FPE-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/cn/assets/figures/FPE-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/cn/assets/figures/FPE-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/cn/assets/figures/FPE.png" class="img-fluid rounded" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+</div>
+<p style="text-align:center">
+<b>主方程</b>。主要描述位于膜电位区间$\left[V-\Delta V/2,V+\Delta V/2\right]$中神经元数目的概率密度在$t$时刻的变化情况。</p>
+
+因此，我们可以得到如下方程描述的神经元数目的变化：
+$$
+\begin{equation}
+\begin{aligned}
+\left[P(V, t+\Delta t) - P(V, t)\right]\Delta V &amp;= \text{流入区间的神经元数目}-\text{流出区间的神经元数目}\\
+&amp;=P(V-\Delta V, t)\frac{I_\mathrm{ext}}{C_m}\Delta t+ P(V+\Delta V, t)\frac{g_l}{C_m}(V+\Delta V-V_l)\Delta t + \nu(t)\Delta t \cdot P(V-w, t)\Delta V \\
+&amp;\quad- P(V, t)\frac{g_l}{C_m}(V-V_l)\Delta t - P(V, t)\frac{I_\mathrm{ext}}{C_m}\Delta t-\nu(t)\Delta t \cdot P(V, t)\Delta V\\
+&amp;=\left[P(V-\Delta V, t)-P(V,t)\right]\frac{I_\mathrm{ext}}{C_m}\Delta t+ \left[P(V+\Delta V, t)f(V+\Delta V)-P(V,t)f(V)\right]\Delta t \\
+&amp;\quad+ \nu(t)\Delta t \Delta V \cdot \left[P(V-w, t) - P(V, t)\right]
+\end{aligned}
+\end{equation}
+$$
+
+其中$f(V) =g_l(V-V_l)/C_m$。移项整理得到
+
+$$
+\begin{equation}
+\begin{aligned}
+\frac{\left[P(V, t+\Delta t) - P(V, t)\right]}{\Delta t} &amp;=\frac{\left[P(V-\Delta V, t)-P(V,t)\right]}{\Delta V}\frac{I_\mathrm{ext}}{C_m}+ \frac{\left[P(V+\Delta V, t)f(V+\Delta V)-P(V,t)f(V)\right]}{\Delta V} \\
+&amp;\quad+ \nu(t) \cdot \left[P(V-w, t) - P(V, t)\right].
+\end{aligned}
+\label{equ:master}
+\end{equation}
+$$
+
+至此，我们得到了对于电压$V$取值范围内有限离散划分与时间不长$\Delta t$下的主方程(Master equation)。而神经元膜电压是一个连续取值的变量，因此，我们可以讲方程\ref{equ:master}推广到连续形式，即当神经元数目充分大，且电压划分足够密时，$N\to\infty$，$\Delta V\to 0$，我们可以将方程\ref{equ:master}中的$P(V, t)$渐进收敛为膜电压的概率密度函数$p(V,t)$。同时，我们令时间不长$\Delta t\to 0$，则方程\ref{equ:master}中的离散差分变为微分，即可的：
+
+$$
+\begin{equation}
+\frac{\partial p(V, t)}{\partial t} = \frac{\partial}{\partial V} \left[\left(f(V)-\frac{I_\mathrm{ext}}{C_m}\right)p(V, t)\right]+ \nu(t) \cdot \left[p(V-w, t) - p(V, t)\right].
+\label{equ:master_dev}
+\end{equation}
+$$
+
+方程\ref{equ:master_dev}描述了膜电压概率密度函数的微分方程。其中等式右端第一项为描述了神经元漏电流以及外界连续电流输入对于$V$的分布额影响，第二项描述了网络内神经元随机放电并相互作用所产生的对于膜电压的影响。另外，由于大脑皮层中神经元之间往往存在成百上千个突触连接，而单个突触单个脉冲放电引起的突触后膜电位改变(EPSP/IPSP)，模型中的$w$，相较于膜电位的取值范围，可以视为小量。因此，我们可以运用扩散近似，关于$w$为小量，泰勒展开方程\ref{equ:master_dev}中$P(V-w,t)$右端第二项至二阶，即
+
+$$
+\begin{equation}
+p(V-w, t) = p(V, t) - \frac{\partial p(V, t)}{\partial V} w + \frac{1}{2} \frac{\partial^2 p(V, t)}{\partial V^2} w^2 + \mathcal{O}(w^3)
+\end{equation}
+$$
+
+将上式带入方程\ref{equ:master_dev}并省略三阶小量$\mathcal{O}(w^3)$，得到
+
+$$
+\begin{equation}
+\frac{\partial p(V, t)}{\partial t} = \frac{\partial}{\partial V} \left[\left(f(V)-\frac{I_\mathrm{ext}}{C_m}-\nu(t)w\right)p(V, t)\right]+ \frac{\nu(t)w^2}{2} \frac{\partial^2}{\partial V^2} p(V, t).
+\label{equ:fpe}
+\end{equation}
+$$
+
+方程\ref{equ:fpe}便是著名的Fokker-Planck方程(FPE)的一维形式。最早由Adriaan Fokker和Max Planck于1914和1917年提出，用于描述统计物理中，流体粒子在随机力和牵引力的作用下，粒子数概率密度函数在平衡状态附近演化的偏微分方程<d-cite key="fokker1914mittlere,risken1996fokkerplanck"></d-cite>。而在神经科学领域，FPE被用于描述神经元膜电位$V$的演化<d-cite key="deco2008dynamic,breakspear2017dynamic"></d-cite>。FPE方程右端第一项为描述了神经元漏电流，外界连续电流输入，以及网络内神经元相互作用的平均效应对于$V$的分布额影响，通常称之为对流项。第二项描述了网络内神经元随机放电的相互作用所产生的对于膜电压涨落的影响，称之为扩散项。
+
+对于LIF神经元模型，即便在扩散近似的极限条件下，$p(V,t)$仍然存在不连续的情况，即当$V=V_\theta$时，神经元将产生动作电位并重置电压值为$V_\mathrm{r}$。因此，$p(V_\theta,t)$存在神经元数目减少，其速率为神经元的平均放电率，即$\left.\frac{\partial p}{\partial t}\right|_{V=V_\theta}=-\left.\frac{\partial \boldsymbol{J}}{\partial V}\right|_{V=V_\theta}+A(t)$，其中，$A(t)$为神经元的平均放电率。与此同时，由于膜电位重置的机制，将有等量的神经元在$V=V_\mathrm{r}$处补充。因此，我们需要方程\ref{equ:fpe}进行修正，添加LIF发放重置机制对于$p(V,t)$的影响：
+
+$$
+\begin{equation}
+\begin{aligned}
+\frac{\partial p(V, t)}{\partial t} &amp;= \frac{\partial}{\partial V} \left[\left(f(V)-\frac{I_\mathrm{ext}}{C_m}-\nu(t)w\right)p(V, t)\right]+ \frac{\nu(t)w^2}{2} \frac{\partial^2}{\partial V^2} p(V, t)\\
+&amp;\quad + A(t) \delta\left(V-V_\mathrm{r}\right) - A(t)\delta\left(V-V_\theta\right).
+\end{aligned}
+\label{equ:fpe_lif}
+\end{equation}
+$$
+
+根据LIF神经元的发放重置机制，易知LIF神经元的膜电位不会超过$V_\theta$，即当$V&gt;V_\theta$时，$p(V,t)=0$。另外，根据扩散极限的限制，我们可以得知当$V=V_\theta$时，$p(V,t)=0$。因此，根据上述边界条件并结合适当的初值条件，我们可以通过解析或数值方法求解方程\ref{equ:fpe_lif}，得到膜电压概率密度函数$p(V,t)$，神经元平均放电率$A(t)$的解。
+
+根据上文的讨论，我们发现FPE将神经网络包含$\mathcal{O}(N)$自由度的庞大高维动力系统简化成一个仅包含两个变量的一维偏微分方程系统。这种模型简化大大降低了模型的复杂度，让我们可以复杂的网络LIF网络动力学有了直观的理解。同时，我们注意到上述FPE的基于两个简单假设：一，网络内神经元全为兴奋性的基于电流的LIF神经元；二，神经元之间的连接权重相同，拓扑上随机连接，没有空间结构的差异。为了更好的符合皮层真实神经元网络的特点，我们需要对于更一般的FPE模型，例如引入基于电导的神经元模型<d-cite key="cai2006kinetica"></d-cite>，考虑小世界网络或无标度网络等更符合生物神经网络特点的网络连接结构等。
+<!-- 然而，这一研究方向需要运用大量复杂的理论统计物理工具，同时引入更加复杂的PDE方程也会大大增加数值模拟的计算复杂度。因而在此我们将不过多讨论这方面的工作。 -->
+</div>]]></content><author><name>Kai Chen</name></author><category term="neuroscience" /><category term="Fokker-Planck" /><summary type="html"><![CDATA[给定$N$个兴奋性LIF神经元，将他们依照一个固定的概率$p$随机链接构成一个网络，其中每个神经元的细胞跨膜电压可以用如下方程描述： $$ \begin{equation} \begin{aligned} \frac{dV_i}{dt} = -\frac{g_l}{C_m}(V_i-V_l) + \frac{I_\mathrm{ext}}{C_m} + \sum_j^N\sum_k w_{ij}\delta(t-t_j^k), \end{aligned} \label{eq:lif} \end{equation} $$ 其中$g_l$，$C_m$，$V_l$分别为神经元的电导，电容和漏电电位，$I_\mathrm{ext}$为外部输入电流，$w_{ij}$为神经元$i$和$j$之间的作用强度，即神经元$j$接收到来自神经元$i$的一个脉冲输入后电压的将上升$w_{ij}$，而$t_j^k$为神经元$j$的第$k$次脉冲发放时间。下面我们假设，网络中所有的神经元都是接受相同的电流输入，且不同神经元之间的作用强度$w_{ij}= w$，均相同。由于所有神经元在网络中的地位都是相同的，与其通过$N$个相互耦合的常微分方程来刻画网络中所有神经元在任意$t$时刻的电压状态$V_i$，不如统计一下每个$t$时刻处于不同电压值的神经元的数量。若将LIF神经元的静息电位$V_\text{r}$到阈值电位$V_\theta$，平均分分成长度为$\Delta V$的等间隔小区间，统计$t$时刻电压值落在$[V-\Delta V/2,V+\Delta V/2)$区间内的神经元个数，$n(V,t)$，则落在该区间内的神经元数量的概率为： $$ \begin{equation} P(V,t) = \frac{n(V,t)}{N}. \end{equation} $$ 根据最朴素的神经元数目守恒的原则，我们下面简单分析一下，在$t+\Delta t$时刻，$P(V,t+\Delta t)$将会是多少。神经元膜电位的变化由\ref{eq:lif}决定，因此区间$[V-\Delta V/2, V+\Delta V/2)$内神经元数目的增加由三个部分贡献。第一，从$[V-3\Delta V/2, V-\Delta V/2)$转移到$[V-\Delta V/2, V+\Delta V/2)$的神经元数量，由外加电流$I_\mathrm{ext}$的强度决定，可以由如下方程描述： $$ \begin{equation} P(V-\Delta V, t)\frac{I_\mathrm{ext}}{C_m}\Delta t. \end{equation} $$]]></summary></entry><entry><title type="html">NESTML安装教程</title><link href="https://neoneuron.github.io/blog/2021/install-nestml/" rel="alternate" type="text/html" title="NESTML安装教程" /><published>2021-11-24T00:00:00+00:00</published><updated>2021-11-24T00:00:00+00:00</updated><id>https://neoneuron.github.io/blog/2021/install-nestml</id><content type="html" xml:base="https://neoneuron.github.io/blog/2021/install-nestml/"><![CDATA[<h2 id="nest与nestml安装与使用指南"><code class="language-plaintext highlighter-rouge">NEST</code>与<code class="language-plaintext highlighter-rouge">NESTML</code>安装与使用指南</h2>
+
+<h3 id="安装最新版本的cmake-需要sudo权限">安装最新版本的<code class="language-plaintext highlighter-rouge">cmake</code> (需要<code class="language-plaintext highlighter-rouge">sudo</code>权限)</h3>
+
+<p><em>参考资料: <a href="https://graspingtech.com/upgrade-cmake/">https://graspingtech.com/upgrade-cmake/</a></em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>build-essential libssl-dev
+wget https://github.com/Kitware/CMake/releases/download/v3.22.0/cmake-3.22.0.tar.gz
+<span class="nb">tar</span> <span class="nt">-zxvf</span> cmake-3.22.0.tar.gz
+<span class="nb">cd </span>cmake-3.22.0
+./bootstrap
+make 
+<span class="nb">sudo </span>make <span class="nb">install</span> 
+</code></pre></div></div>
+
+<h3 id="安装nest-v31">安装<code class="language-plaintext highlighter-rouge">NEST</code>-<code class="language-plaintext highlighter-rouge">v3.1</code></h3>
+
+<p><em>参考资料: <a href="https://nest-simulator.readthedocs.io/en/stable/installation/linux_install.html">https://nest-simulator.readthedocs.io/en/stable/installation/linux_install.html</a></em></p>
+
+<p><strong>警告</strong>: 通过<code class="language-plaintext highlighter-rouge">pip</code>或<code class="language-plaintext highlighter-rouge">conda</code>直接安装NEST v2.20.1 可能会产生该<a href="https://github.com/nest/nestml/issues/670">报错问题</a>。</p>
+
+<ul>
+  <li>新建conda环境.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  conda create <span class="nt">-n</span> nestml <span class="nv">python</span><span class="o">=</span>3.9 <span class="nt">-y</span>
+</code></pre></div>    </div>
+  </li>
+  <li>安装依赖环境.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  conda activate nestml
+  conda <span class="nb">install</span> <span class="nt">-y</span> numpy cython matplotlib ipython scipy
+  conda <span class="nb">install</span> <span class="nt">-y</span> pytest pytest-xdist pytest-timeout
+  pip <span class="nb">install </span>junitparser
+</code></pre></div>    </div>
+  </li>
+  <li>下载<a href="https://github.com/nest/nest-simulator/releases/tag/v3.1">最新版的NEST安装包</a>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  wget <span class="nt">-O</span> nest-simulator-3.1.tar.gz https://codeload.github.com/nest/nest-simulator/tar.gz/refs/tags/v3.1
+</code></pre></div>    </div>
+  </li>
+  <li>解压tar压缩包
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">tar</span> <span class="nt">-xzvf</span> nest-simulator-3.1.tar.gz
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>创建编译目录</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">mkdir </span>nest-simulator-3.1-build
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>切换到编译目录</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">cd </span>nest-simulator-3.1-build
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>配置NEST。可能需要额外cmake配置选项(see <a href="https://nest-simulator.readthedocs.io/en/stable/installation/cmake_options.html">CMake Options for NEST</a>).</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  cmake ../nest-simulator-3.1/
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>编译NEST并安装:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  make
+  make <span class="nb">install
+  </span>make installcheck
+</code></pre></div>    </div>
+
+    <p><code class="language-plaintext highlighter-rouge">make installcheck</code>命令会检查安装是否成功。如果安装成功，会显示如下信息:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">[</span>100%] Built target installcheck
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="安装最新的nestml开发版本">安装最新的<code class="language-plaintext highlighter-rouge">NEST::ml</code>开发版本</h3>
+
+<p><em>参考资料: <a href="https://nest-simulator.readthedocs.io/en/stable/installation/linux_install.html">https://nestml.readthedocs.io/en/latest/installation.html</a></em></p>
+
+<p>从GitHub下载最新的开发版本。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/nest/nestml
+</code></pre></div></div>
+
+<p>安装到当前Python环境。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>nestml
+python setup.py <span class="nb">install</span> <span class="nt">--user</span>
+</code></pre></div></div>
+
+<p><strong>注意:</strong> <code class="language-plaintext highlighter-rouge">antlr4-python3-runtime==4.10</code>可能引起报错，推荐版本：<code class="language-plaintext highlighter-rouge">4.9.3</code>。</p>
+
+<h4 id="测试安装-可选">测试安装 (可选)</h4>
+
+<p>安装完成后，可通过下面命令检验是否安装成功。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python setup.py <span class="nb">test</span>
+</code></pre></div></div>
+
+<p><em>注意：<code class="language-plaintext highlighter-rouge">tests.docstring_comment_test</code>可能会失败报错，但并不影响正常使用。</em></p>
+
+<h3 id="安装测试nestml模块">安装测试<code class="language-plaintext highlighter-rouge">*.nestml</code>模块</h3>
+
+<p><em>参考资料: <a href="https://nest-simulator.readthedocs.io/en/stable/installation/linux_install.html">https://nestml.readthedocs.io/en/latest/tutorials/izhikevich/nestml_izhikevich_tutorial.html</a></em></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">nest</span>
+<span class="kn">from</span> <span class="n">pynestml.frontend.pynestml_frontend</span> <span class="kn">import</span> <span class="n">to_nest</span><span class="p">,</span> <span class="n">install_nest</span>
+
+<span class="n">NEST_SIMULATOR_INSTALL_LOCATION</span> <span class="o">=</span> <span class="n">nest</span><span class="p">.</span><span class="n">ll_api</span><span class="p">.</span><span class="nf">sli_func</span><span class="p">(</span><span class="s">"statusdict/prefix ::"</span><span class="p">)</span>
+
+<span class="nf">to_nest</span><span class="p">(</span><span class="n">input_path</span><span class="o">=</span><span class="s">"izhikevich_solution.nestml"</span><span class="p">,</span> <span class="c1"># replace with path of your own nestml file
+</span>        <span class="n">target_path</span><span class="o">=</span><span class="s">"~/tmp/nestml-component"</span><span class="p">,</span>
+        <span class="n">logging_level</span><span class="o">=</span><span class="s">"ERROR"</span><span class="p">)</span>
+
+<span class="nf">install_nest</span><span class="p">(</span><span class="s">"~/tmp/nestml-component"</span><span class="p">,</span> <span class="n">NEST_SIMULATOR_INSTALL_LOCATION</span><span class="p">)</span>
+
+<span class="n">nest</span><span class="p">.</span><span class="nc">Install</span><span class="p">(</span><span class="s">"nestmlmodule"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="使用nest编写模型并运行">使用NEST编写模型并运行</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplt</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">nest</span>
+
+<span class="n">nest</span><span class="p">.</span><span class="nf">set_verbosity</span><span class="p">(</span><span class="s">"M_WARNING"</span><span class="p">)</span>
+<span class="n">nest</span><span class="p">.</span><span class="nc">ResetKernel</span><span class="p">()</span>
+
+<span class="n">neuron</span> <span class="o">=</span> <span class="n">nest</span><span class="p">.</span><span class="nc">Create</span><span class="p">(</span><span class="s">"izhikevich_tutorial"</span><span class="p">)</span> <span class="c1"># replace with name of your own model
+</span><span class="n">voltmeter</span> <span class="o">=</span> <span class="n">nest</span><span class="p">.</span><span class="nc">Create</span><span class="p">(</span><span class="s">"voltmeter"</span><span class="p">)</span>
+
+<span class="n">voltmeter</span><span class="p">.</span><span class="nf">set</span><span class="p">({</span><span class="s">"record_from"</span><span class="p">:</span> <span class="p">[</span><span class="s">"v"</span><span class="p">,</span> <span class="s">"u"</span><span class="p">]})</span>
+<span class="n">nest</span><span class="p">.</span><span class="nc">Connect</span><span class="p">(</span><span class="n">voltmeter</span><span class="p">,</span> <span class="n">neuron</span><span class="p">)</span>
+
+<span class="n">cgs</span> <span class="o">=</span> <span class="n">nest</span><span class="p">.</span><span class="nc">Create</span><span class="p">(</span><span class="s">'dc_generator'</span><span class="p">)</span>
+<span class="n">cgs</span><span class="p">.</span><span class="nf">set</span><span class="p">({</span><span class="s">"amplitude"</span><span class="p">:</span> <span class="mf">25.</span><span class="p">})</span>
+<span class="n">nest</span><span class="p">.</span><span class="nc">Connect</span><span class="p">(</span><span class="n">cgs</span><span class="p">,</span> <span class="n">neuron</span><span class="p">)</span>
+
+<span class="n">sr</span> <span class="o">=</span> <span class="n">nest</span><span class="p">.</span><span class="nc">Create</span><span class="p">(</span><span class="s">"spike_recorder"</span><span class="p">)</span>
+<span class="n">nest</span><span class="p">.</span><span class="nc">Connect</span><span class="p">(</span><span class="n">neuron</span><span class="p">,</span> <span class="n">sr</span><span class="p">)</span>
+
+<span class="n">nest</span><span class="p">.</span><span class="nc">Simulate</span><span class="p">(</span><span class="mf">250.</span><span class="p">)</span>
+
+<span class="n">spike_times</span> <span class="o">=</span> <span class="n">nest</span><span class="p">.</span><span class="nc">GetStatus</span><span class="p">(</span><span class="n">sr</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="s">'events'</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s">'times'</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">plot</span><span class="p">(</span><span class="n">voltmeter</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">"events"</span><span class="p">)[</span><span class="s">"times"</span><span class="p">],</span> <span class="n">voltmeter</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">"events"</span><span class="p">)[</span><span class="s">"v"</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">plot</span><span class="p">(</span><span class="n">voltmeter</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">"events"</span><span class="p">)[</span><span class="s">"times"</span><span class="p">],</span> <span class="n">voltmeter</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">"events"</span><span class="p">)[</span><span class="s">"u"</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">scatter</span><span class="p">(</span><span class="n">spike_times</span><span class="p">,</span> <span class="mi">30</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="nf">ones_like</span><span class="p">(</span><span class="n">spike_times</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s">"d"</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s">"orange"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="p">.</span><span class="mi">8</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">99</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">_ax</span> <span class="ow">in</span> <span class="n">ax</span><span class="p">:</span>
+    <span class="n">_ax</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">set_ylabel</span><span class="p">(</span><span class="s">"v [mV]"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">set_ylabel</span><span class="p">(</span><span class="s">"u"</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="nf">set_xlabel</span><span class="p">(</span><span class="s">"Time [ms]"</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="s">'test.png'</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>代码输出结果如下:</p>
+<div class="row">
+    <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/figures/2021-11-24-test-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/figures/2021-11-24-test-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/figures/2021-11-24-test-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/figures/2021-11-24-test.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+</div>]]></content><author><name></name></author><category term="code" /><category term="NEST-simulator" /><summary type="html"><![CDATA[NEST与NESTML安装与使用指南]]></summary></entry><entry><title type="html">路由器桥接配置</title><link href="https://neoneuron.github.io/blog/2021/router-bridge/" rel="alternate" type="text/html" title="路由器桥接配置" /><published>2021-01-30T00:00:00+00:00</published><updated>2021-01-30T00:00:00+00:00</updated><id>https://neoneuron.github.io/blog/2021/router-bridge</id><content type="html" xml:base="https://neoneuron.github.io/blog/2021/router-bridge/"><![CDATA[<p>路由器桥接模式设置操作步骤。</p>
+
+<h2 id="主路由器设置">主路由器设置</h2>
+
+<p>根据所使用的路由器使用指南与网络供应商提供的信息，设置好主路由器的网络连接。</p>
+
+<h2 id="桥连路由器设置">桥连路由器设置</h2>
+
+<ol>
+  <li>接入桥连路由器的WIFI网络，随后在浏览器打开路由器设置页面，对于TP-LINK路由器，设置页面IP：<code class="language-plaintext highlighter-rouge">192.168.1.1</code>。以下IP地址均以TP-LINK路由器为例。</li>
+  <li>设置LAN口IP为<code class="language-plaintext highlighter-rouge">192.168.1.100</code>。</li>
+  <li>重启路由器后，使用新IP<code class="language-plaintext highlighter-rouge">192.168.1.100</code>进入桥连路由器设置页面。</li>
+  <li>在设置中关闭DHCP服务器。</li>
+  <li>为桥连路由器设置选择地址池范围。该地址池不应包含LAN口IP，并最好与主路由器地址池无交集。</li>
+  <li>在无限设置中打开WDS。扫描IP列表并选择主路由器.</li>
+  <li>输入主路由器的密码。</li>
+  <li>保存路由器设置并重启路由器。<em>推荐：桥连路由器与主路由器设置相同的通道。</em></li>
+  <li>重新连接桥连路由器。</li>
+</ol>
+
+<p><strong>桥连路由器设置成功！</strong></p>]]></content><author><name></name></author><category term="tech" /><category term="router-setting" /><summary type="html"><![CDATA[路由器桥接模式设置操作步骤。]]></summary></entry></feed>
