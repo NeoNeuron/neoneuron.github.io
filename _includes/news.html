@@ -5,7 +5,7 @@
             <div class="table-responsive" {% if site.news_scrollable and news_size > 3 %}style="max-height: 10vw"{% endif %}>
               <table class="table table-sm table-borderless">
               {%- assign news = site.news | reverse -%}
-              {% if site.news_limit %}
+              {% if site.news_limit and include.news_limit %}
               {% assign news_limit = site.news_limit %}
               {% else %}
               {% assign news_limit = news_size %}
@@ -18,7 +18,7 @@
                     {% if item.inline -%} 
                       {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
                     {%- else -%} 
-                      <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                      <a class="news-title" href="{{ item.url | prepend: site.baseurl }}">{{ item.title }}</a>
                     {%- endif %} 
                   </td>
                 </tr>

@@ -19,9 +19,41 @@
       institution: Shanghai Jiao Tong University, Shanghai, CHINA
       year: 2013-2017
 
+- title: Oral Presentations
+  type: time_table
+  contents:
+    - year: 2023
+      title: Quantitative relations among causality measures with applications to nonlinear network reconstruction
+      description: SIAM-DS23, Portland, Oregon, USA
+    - year: 2022
+      title: Quantitative relations among causality measures with applications to nonlinear pulse-output network reconstruction
+      description: CSIAM2022, online
+    - year: 2021
+      title: Modeling Attentional Modulated Spike Count Correlation in Macaque V1
+      description: CCCN2021, online
+
+- title: Posters
+  type: time_table
+  contents:
+    - year: 2023/08
+      title: Quantitative relations among causality measures with applications to nonlinear pulse-coupled network reconstruction
+      description: ISIAM2023, Waseda University, Tokyo, Japan
+    - year: 2023/07
+      title: Quantitative relations among causality measures with applications to nonlinear pulse-coupled network reconstruction
+      description: CNS2023, Zhuhai, China
+    - year: 2022/06
+      title: Quantitative relations among causality measures with applications to nonlinear pulse-output network reconstruction
+      description: CCCN2022, online
+    - year: 2021/06
+      title: Modeling Attentional Modulated Spike Count Correlation in Macaque V1
+      description: CCCN2021, online
+
 - title: Research Projects
   type: time_table
   contents:
+    - title: Computational Mechanism of task-oriented Reservoir Recurrent Neural Networks
+      institution: Shanghai Jiao Tong University, SHANGHAI
+      year: 2022/12-Present
     - title: Effective Inference of Functional Connectivity from ECoG Data Using TDMI
       institution: Shanghai Jiao Tong University, SHANGHAI
       year: 2021/01-Present
@@ -40,19 +72,6 @@
     - title: Femtosecond Pump-probe Spectroscopy (FPPS) of Protein Photosynthesis
       institution: University of California, Davis, DAVIS, CA
       year: 2016/08 - 2016/09
-
-- title: Presentations
-  type: time_table
-  contents:
-    - year: 2022
-      title: "<u>[ORAL]</u>: Quantitative relations among causality measures with applications to nonlinear pulse-output network reconstruction"
-      description: CSIAM2022, online
-    - year: 2022
-      title: "<u>[POSTER]</u>: Quantitative relations among causality measures with applications to nonlinear pulse-output network reconstruction"
-      description: CCCN2022, online
-    - year: 2021
-      title: "<u>[ORAL & POSTER]</u>: Modeling Attentional Modulated Spike Count Correlation in Macaque V1"
-      description: CCCN2021, online
 
 - title: Honors and Awards
   type: time_table
