@@ -29,6 +29,10 @@
 <lastmod>2021-11-24T00:00:00+00:00</lastmod>
 </url>
 <url>
+<loc>https://neoneuron.github.io/blog/2023/compile-boost/</loc>
+<lastmod>2023-08-28T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>https://neoneuron.github.io/</loc>
 </url>
 <url>
@@ -56,6 +60,12 @@
 <loc>https://neoneuron.github.io/blog/tag/nest-simulator/</loc>
 </url>
 <url>
+<loc>https://neoneuron.github.io/blog/tag/c-c/</loc>
+</url>
+<url>
+<loc>https://neoneuron.github.io/blog/tag/boost/</loc>
+</url>
+<url>
 <loc>https://neoneuron.github.io/blog/category/tech/</loc>
 </url>
 <url>
@@ -63,5 +73,8 @@
 </url>
 <url>
 <loc>https://neoneuron.github.io/blog/2021/</loc>
+</url>
+<url>
+<loc>https://neoneuron.github.io/blog/2023/</loc>
 </url>
 </urlset>
