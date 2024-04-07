@@ -51,13 +51,19 @@
 - title: Research Projects
   type: time_table
   contents:
+    - title: Neural Mechanism Underlying CDM in Dual-area Low-rank Recurrent Neural Networks
+      institution: Shanghai Jiao Tong University, SHANGHAI
+      year: 2023/10-Present
+    - title: Causal Connectivity Measures for Pulse-output Network Reconstruction
+      institution: Shanghai Jiao Tong University, SHANGHAI
+      year: 2021/09-2023/12
     - title: Computational Mechanism of task-oriented Reservoir Recurrent Neural Networks
       institution: Shanghai Jiao Tong University, SHANGHAI
       year: 2022/12-Present
     - title: Effective Inference of Functional Connectivity from ECoG Data Using TDMI
       institution: Shanghai Jiao Tong University, SHANGHAI
       year: 2021/01-Present
-    - title: Modeling Attentional Modulated Spike Count Correlation(Rsc) in Macaque V1
+    - title: Modeling Attentional Modulated Spike Count Correlation in Macaque V1
       institution: Shanghai Jiao Tong University, SHANGHAI
       year: 2019/12-Present
     - title: Causal Inference of Neuronal Data Based on Time-delayed Mutual Information
@@ -66,10 +72,10 @@
     - title: Study of Network Dynamics Based on Integrate-and-Fire Neuron Model
       institution: Shanghai Jiao Tong University, SHANGHAI
       year: 2016/02-2017/06
-    - title: Coherent Diffraction Imaging (CDI) of Micro-Scale Samples
+    - title: Coherent Diffraction Imaging of Micro-Scale Samples
       institution: Shanghai Jiao Tong University, SHANGHAI
       year: 2014/09-2015/06
-    - title: Femtosecond Pump-probe Spectroscopy (FPPS) of Protein Photosynthesis
+    - title: Femtosecond Pump-probe Spectroscopy of Protein Photosynthesis
       institution: University of California, Davis, DAVIS, CA
       year: 2016/08 - 2016/09
 
