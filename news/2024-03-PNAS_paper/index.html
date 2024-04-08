@@ -3,15 +3,14 @@
 
   <!-- Head -->
   <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="refresh" content="3; url=/">    <!-- Metadata, OpenGraph and Schema.org -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
     
 
     <!-- Standard metadata -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Compiling boost using gcc on macOS | Kai  Chen 陈开</title>
+    <title>news.titles.20240329 | Kai  Chen 陈开</title>
     <meta name="author" content="Kai  Chen 陈开">
     <meta name="description" content="Personal website of Kai Chen. Here, you may find its ideas about life, research, and technical stuffs. ENJOY the life!
 ">
@@ -35,7 +34,7 @@
     <link rel="shortcut icon" href="/assets/img/logo-w.png">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://neoneuron.github.io/blog/2023/compile-boost/">
+    <link rel="canonical" href="https://neoneuron.github.io/news/2024-03-PNAS_paper/">
     
     <!-- Dark Mode -->
     
@@ -74,8 +73,8 @@
               </li>
               
               <!-- Blog -->
-              <li class="nav-item active">
-                <a class="nav-link" href="/blog/">blog<span class="sr-only">(current)</span></a>
+              <li class="nav-item ">
+                <a class="nav-link" href="/blog/">blog</a>
               </li>
 
               <!-- Other pages -->
@@ -94,7 +93,7 @@
 <!-- Toogle language -->
               <li class="nav-item active">
               
-                <a class="nav-link" href="/cn/blog/2023/compile-boost/"> 中文 </a>
+                <a class="nav-link" href="/cn/news/2024-03-PNAS_paper/"> 中文 </a>
               
               </li>
 
@@ -126,26 +125,70 @@
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Compiling boost using gcc on macOS</h1>
-    <p class="post-meta">August 28, 2023</p>
+    <h1 class="post-title">New paper published on PNAS <img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png" height="20" width="20"> <img class="emoji" title=":smile:" alt=":smile:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png" height="20" width="20">
+</h1>
+    <p class="post-meta">March 29, 2024</p>
     <p class="post-tags">
-      <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
+      <a href="/blog/2024"> <i class="fas fa-calendar fa-sm"></i> 2024 </a>
         ·  
-        <a href="/blog/tag/c-c">
-          <i class="fas fa-hashtag fa-sm"></i> C/C++</a>  
-          <a href="/blog/tag/boost">
-          <i class="fas fa-hashtag fa-sm"></i> Boost</a>  
+        <a href="/blog/tag/causality">
+          <i class="fas fa-hashtag fa-sm"></i> causality,</a>  
+          <a href="/blog/tag/correlation">
+          <i class="fas fa-hashtag fa-sm"></i> correlation,</a>  
+          <a href="/blog/tag/mutual-information">
+          <i class="fas fa-hashtag fa-sm"></i> mutual-information,</a>  
+          <a href="/blog/tag/granger-causality">
+          <i class="fas fa-hashtag fa-sm"></i> Granger-causality,</a>  
+          <a href="/blog/tag/transfer-entropy">
+          <i class="fas fa-hashtag fa-sm"></i> transfer-entropy,</a>  
+          <a href="/blog/tag/neural-networks">
+          <i class="fas fa-hashtag fa-sm"></i> neural-networks</a>  
           
         ·  
-        <a href="/blog/category/code">
-          <i class="fas fa-tag fa-sm"></i> code</a>  
+        <a href="/blog/category/paper">
+          <i class="fas fa-tag fa-sm"></i> paper</a>  
           
 
     </p>
   </header>
 
   <article class="post-content">
-    <p>Redirect to external notion page.</p>
+    <blockquote>
+  <p>Zhong-qi K. Tian*, <strong>Kai Chen</strong>*, Songting Li, David W. McLaughlin, and Douglas Zhou. 2024. “Causal Connectivity Measures for Pulse-Output Network Reconstruction: Analysis and Applications.” Proceedings of the National Academy of Sciences 121 (14): e2305297121. <a href="https://doi.org/10.1073/pnas.2305297121" rel="external nofollow noopener" target="_blank">https://doi.org/10.1073/pnas.2305297121.</a></p>
+</blockquote>
+
+<p>Recently, Douglas Zhou and Songting Li from the Institute of Natural Sciences and the School of Mathematical Sciences at Shanghai Jiao Tong University, along with their students Zhong-qi Tian, Kai Chen, and their collaborators, have derived quantitative mathematical relationships between different causality measures and applied them to pulse-output time series systems. They have successfully established a framework for reconstructing the connectivity structure of pulse-output networks. This research work, titled “Causal connectivity measures for pulse-output network reconstruction: analysis and applications”, was published online in PNAS on April 2, 2024.</p>
+
+<p>In neuroscience, accessing the structural connectivity of cortical networks at the synaptic level is of great significance for understanding the network structure, dynamics, and cognitive functions. However, due to the complexity of the multi-scale cortical network structure, it is very difficult to directly measure the complete synaptic structural connectivity in the cortical network with current experimental technology. However, with the emergence and development of measuring technologies, such as Neuropixel electrodes and two-photon calcium imaging, it is possible to simultaneously record neural activity data from tens of thousands of neurons. The critical scientific inquiry in computational neuroscience is whether we can adapt and develop mathematical tools for causality analysis that would allow us to accurately and effectively infer the structural connectivity of a network from its neural activity data.</p>
+
+<p>According to previous studies, the connectivity directly calculated by the causality measure, denoted as causal connectivity, differs from that of measured actual synaptic connectivity, referred to as structural connectivity. Different causality measures might result in different causal connectivities. However, there is a lack of quantitative and applicable mathematical theory regarding the relationship between different causality measures, as well as the relationship between causal connectivity and structure connectivity.</p>
+
+<p>This work focuses on the analysis of neuronal pulse-output spike signals. It first provides the theoretical proof of the quantitative relationship between four commonly used causality measures (time-delay correlation coefficient, time-delay mutual information, Granger causality, and transfer entropy) in calculating the causal connectivity based on neuronal pulse-output spike signals, and verifies the validity of the theory in the classical Hodgkin-Huxley (HH) neuronal networks and a real mouse brain network. In addition, the research proves that the causal connectivity inferred by any of the four measures is highly consistent with the underlying structural connectivity of the network, theoretically revealing the relation between causal connectivity and structural connectivity (Fig. A). Subsequently, based on the theory above, this research established a framework for reconstructing structural connectivity based on causal connectivity (Fig. B). The framework has accurately reconstructed the structural connectivity of various types of neuronal networks, including HH networks (Fig. C), LIF excitatory-inhibitory balanced networks, etc., and is applicable to pulse-output networks in different dynamical regimes. It is worth noting that the structural connectivity in the pulse-output network can be reconstructed pairwise without conditioning on the global information of all other nodes in the network, thereby circumventing the curse of dimensionality. Finally, this research shows the effective application of the reconstruction framework in the real experimental data. The structural connectivity is reconstructed based on the spike-train data of neuronal activities simultaneously recorded from mouse cortex when the mouse was watching various types of visual stimuli (Fig. D), achieving good reconstruction results (Fig. E). The consistency of the reconstructed structural connectivities under different visual stimuli for the same mouse is quite high.</p>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/PNAS-news-fig-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/PNAS-news-fig-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/PNAS-news-fig-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/PNAS-news-fig.png" class="img-fluid" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+<div class="caption">
+A. The relation between the strengths of causal and structural connectivity. The gray star curve is the quadratic fit. B. The pipeline of reconstruction. C. Performance of reconstruction in HH network. The distribution of causal values shows a clear bimodal distribution in the log scale, with the left peak indicating the pairs without direct connections and the right peak indicating pairs with direct synaptic connections. D. The sketch of recording neural activity in a mouse cortical network using Neuropixels. E. Performance of reconstruction using spike-train data recorded in different visual stimuli (ROC curves). Insets are the distributions of causal values.
+</div>
+
+<p>This work proposes a theoretical and algorithmic framework for reconstructing structural connectivity that is applicable to various causality measures. It lays a mathematical theoretical foundation for understanding the quantitative relationships between different causality measures as well as the relationships between causal and structural connectivity. This is of great significance for better understanding the relationships between the causal and structural connectivity of general nonlinear pulse-output networks.</p>
+
+<p>Former PhD student <strong>Zhong-qi Tian</strong> and PhD student <strong>Kai Chen</strong> from SJTU are the co-first authors of the paper. Prof. <strong>Songting Li</strong> from SJTU, Prof. <strong>David W. McLaughlin</strong> from New York University, and Prof. <strong>Douglas Zhou</strong> from SJTU are the co-corresponding authors of the paper. The work has been supported by the National Natural Science Foundation of China, the Ministry of Science and Technology, and the Shanghai Municipal Science and Technology Commission.</p>
+
 
   </article>
 
@@ -160,6 +203,12 @@
     <!-- Adds related posts to the end of an article -->
     <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2>
     <p class="mb-2">Here are some more articles you might like to read next:</p>
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/compile-boost/">Compiling boost using gcc on macOS</a>
+  </li>
+
   
 
   <li class="my-2">
