@@ -57,3 +57,14 @@ projects:
     project1: 项目 1
     project2: 项目 2
     project3: 项目 3
+news:
+  titles:
+    20240329: "新文章发表在 PNAS :sparkles: :smile:"
+    20230825: "新海报发表在 ICIAM2023 :sparkles: :smile:"
+    20230728: "新海报发表在 CNS2023 :sparkles: :smile:"
+    20230518: "新口头报告发表在 SIAM Dynamical System 2023 :sparkles: :smile:"
+    20221120: "新口头汇报发表在 CSIAM 2022 (中文)"
+    20220624: "新海报发表在 CCCN2022 :sparkles: :smile:"
+    20210612: "新海报和口头汇报发表在 CCCN2021 :sparkles: :smile:"
+    20220318: "博士论文开题答辩"
+    20210412: "博士学位资格考试"

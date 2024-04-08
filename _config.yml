@@ -5,7 +5,7 @@
 title: blank # the website title (if blank, full name will be used instead)
 first_name: Kai
 middle_name:
-last_name: Chen
+last_name: Chen 陈开
 email: kchen513@outlook.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Personal website of Kai Chen. Here, you may find its ideas about
@@ -77,10 +77,10 @@ twitter_username: kchen513
 mastodon_username: # your mastodon instance+username in the format instance.tld/@username
 linkedin_username: kai-chen-a35666a6 
 telegram_username: # your Telegram user name
-scholar_userid: # your Google Scholar ID
+scholar_userid: TzcYWrUAAAAJ
 semanticscholar_id: # your Semantic Scholar ID
 whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
-orcid_id: # your ORCID ID
+orcid_id: 0009-0004-3834-9504
 medium_username: # your Medium username
 quora_username: # your Quora username
 publons_id: # your ID on Publons

@@ -1,6 +1,6 @@
 ---
-layout: post
-title: "New poster on CCCN2022 :sparkles: :smile:"
+layout: news
+title: news.titles.20220624
 date: 2022-06-24 18:00:00+0800
 categories: poster
 tags: causality, correlation, mutual-information, Granger-causality, transfer-entropy, neural-networks 

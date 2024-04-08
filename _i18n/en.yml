@@ -57,3 +57,14 @@ projects:
     project1: Project 1
     project2: Project 2
     project3: Project 3
+news:
+  titles:
+    20240329: "New paper published on PNAS :sparkles: :smile:"
+    20230825: "New poster on ICIAM2023 :sparkles: :smile:"
+    20230728: "New poster on CNS2023 :sparkles: :smile:"
+    20230518: "New minisymposium on SIAM Dynamical System 2023"
+    20221120: "New minisymposium on CSIAM 2022 (in Chinese)"
+    20220624: "New poster on CCCN2022 :sparkles: :smile:"
+    20210612: "New poster and oral presentation on CCCN2021 :sparkles: :smile:"
+    20220318: "thesis proposal"
+    20210412: "phd qualify"
