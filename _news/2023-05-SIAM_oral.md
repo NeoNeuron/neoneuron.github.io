@@ -6,7 +6,7 @@ categories: Symposium
 tags: causality, correlation, mutual-information, Granger-causality, transfer-entropy, neural-networks 
 ---
 
-{% include figure.html path='assets/img/2023-05-18-SIAM-DS23.png' class="img-fluid" %}
+{% include figure.liquid path='assets/img/2023-05-18-SIAM-DS23.png' class="img-fluid" %}
 
 > [Link](https://meetings.siam.org/sess/dsp_talk.cfm?p=132553) to SIAM-DS23.
 

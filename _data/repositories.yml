@@ -1,6 +1,8 @@
 github_users:
   - neoneuron
 
+repo_description_lines_max: 2
+
 github_repos:
   - neoneuron/causal4reconstruction
   - neoneuron/SJTU-11th-CNS-Winter-School

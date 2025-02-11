@@ -6,7 +6,7 @@ categories: Symposium
 tags: causality, correlation, mutual-information, Granger-causality, transfer-entropy, neural-networks 
 ---
 
-{% include figure.html path='assets/img/CSIAM2022.png' class="img-fluid" %}
+{% include figure.liquid path='assets/img/CSIAM2022.png' class="img-fluid" %}
 
 [Link](https://meeting.csiam.org.cn/#/2022/) to CSIAM2022.
 

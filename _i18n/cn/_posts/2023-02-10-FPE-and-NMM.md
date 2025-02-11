@@ -65,7 +65,7 @@ $$
 $$
 
 <div class="row">
-    {% include figure.html path="/assets/figures/FPE.png" class="img-fluid rounded" zoomable=true %}
+    {% include figure.liquid path="/assets/figures/FPE.png" class="img-fluid rounded" zoomable=true %}
 </div>
 <p style="text-align:center">
 <b>主方程</b>。主要描述位于膜电位区间$\left[V-\Delta V/2,V+\Delta V/2\right]$中神经元数目的概率密度在$t$时刻的变化情况。</p>

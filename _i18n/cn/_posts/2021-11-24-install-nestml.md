@@ -174,5 +174,5 @@ fig.show()
 
 代码输出结果如下:
 <div class="row">
-    {% include figure.html path="/assets/figures/2021-11-24-test.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    {% include figure.liquid path="/assets/figures/2021-11-24-test.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 </div>
