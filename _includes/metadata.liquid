@@ -27,7 +27,7 @@
     {% capture title %}{{ site.title }}{% endcapture %}
   {% endif %}
   {% if page.url == '/blog/index.html' %}
-    {{ page.title }} | {{ title }}
+    {% capture page_title %}{{ site.data[site.active_lang].strings.blog.navigation_title }}{% endcapture %}
   {% elsif page.title != 'blank' and page.url != '/' %}
     {% if page.title == null or page.title == '' %}
       {{ page.date | date: '%Y' }} | {{ title }}
@@ -61,7 +61,7 @@
   {% if page.og_image or site.og_image %}
     <meta property="og:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}{{ site.og_image }}{% endif %}">
   {% endif %}
-  <meta property="og:locale" content="{{ site.lang }}">
+  <meta property="og:locale" content="{{ site.active_lang }}">
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary">

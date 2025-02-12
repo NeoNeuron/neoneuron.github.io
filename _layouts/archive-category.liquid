@@ -4,7 +4,7 @@ layout: default
 <div class="post">
   <header class="post-header">
     <h1 class="post-title"><i class="fa-solid fa-tag fa-sm"></i> {{ page.title }}</h1>
-    <p class="post-description"> {% t descriptions.archive-category %} </p>
+    <p class="post-description"> {{ site.data[site.active_lang].strings.archive_category }} </p>
   </header>
 
   <article class="archive">
@@ -13,15 +13,15 @@ layout: default
         {% for post in page.posts %}
           <tr>
             <th scope="row">
-              {% include date_format.liquid format="short" date_from=post %}
+              {% include date_format.liquid format="short" date=post.date %}
             </th>
             <td>
               {% if post.redirect == blank %}
-                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
               {% elsif post.redirect contains '://' %}
                 <a class="post-link" href="{{ post.redirect }}" target="_blank">{{ post.title }}</a>
               {% else %}
-                <a class="post-link" href="{{ post.redirect | prepend: site.baseurl }}">{{ post.title }}</a>
+                <a class="post-link" href="{{ post.redirect | relative_url }}">{{ post.title }}</a>
               {% endif %}
             </td>
           </tr>

@@ -7,13 +7,10 @@ first_name: Kai
 middle_name:
 last_name: Chen 陈开
 contact_note: >
-  Feel free to reach through EMAIL.
+  Feel free to reach through EMAIL
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Personal website of Kai Chen. Here, you may find its ideas about
   life, research, and technical stuffs. ENJOY the life!
-footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: jekyll, academic-website, computational-neuroscience  # add your own keywords or leave empty
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
@@ -33,7 +30,7 @@ back_to_top: true # set to false to disable the back to top button
 repo_theme_light: default # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 repo_theme_dark: dark # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 repo_trophies:
-  enabled: true
+  enabled: false
   theme_light: flat # https://github.com/ryo-ma/github-profile-trophy
   theme_dark: gitdimmed # https://github.com/ryo-ma/github-profile-trophy
 
@@ -88,8 +85,6 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Midyard of My Mind  # your blog must have a name for it to show up in the nav bar
-blog_description: collecting pieces of sparkling ideas
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -141,16 +136,6 @@ collections:
     output: true
     permalink: /:collection/:title/
 
-announcements:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
-
-latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
-
 # -----------------------------------------------------------------------------
 # Jekyll settings
 # -----------------------------------------------------------------------------
@@ -201,11 +186,11 @@ plugins:
   - jekyll-feed
   - jekyll-get-json
   - jekyll-imagemagick
-  - jekyll-multiple-languages-plugin
   - jekyll-jupyter-notebook
   - jekyll-link-attributes
   - jekyll-minifier
   - jekyll-paginate-v2
+  - jekyll-polyglot
   - jekyll-regex-replace
   - jekyll/scholar
   - jekyll-sitemap
@@ -223,13 +208,6 @@ defaults:
 
 sass:
   style: compressed
-
-# -----------------------------------------------------------------------------
-# Jekyll multiple languages settings
-# -----------------------------------------------------------------------------
-
-languages: ["en", "cn"]
-default_locale_in_subfolder: false
 
 # -----------------------------------------------------------------------------
 # Jekyll Minifier
@@ -340,6 +318,17 @@ external_links:
   rel: external nofollow noopener
   target: _blank
   exclude:
+
+# -----------------------------------------------------------------------------
+# Jekyll Polyglot
+# -----------------------------------------------------------------------------
+
+languages: ["en-us", "zh-cn"]
+default_lang: "en-us"
+exclude_from_localization: ["assets"]
+lang_from_path: true
+country_flag: true # set true for allowing flag symbol in language toggle
+parallel_localization: false
 
 # -----------------------------------------------------------------------------
 # Responsive WebP Images

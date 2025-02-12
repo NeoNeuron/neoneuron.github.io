@@ -1,0 +1,160 @@
+archive_category: 该类别的帖子合集
+archive_tag: 该标签的帖子合集
+archive_year: 该年份的帖子合集
+bibliography:
+  abstract: 摘要
+  awarded: 获奖
+  blog: 博客
+  book_prefix: 于
+  code: 代码
+  last_author_prefix: 和
+  poster: 海报
+  slides: 幻灯片
+  supp: 附录
+  video: 视频
+  website: 网页
+latest_posts: 最新博客
+news: 近期动态
+selected_publications: 部分论文
+months:
+  long:
+    january: 01月
+    february: 02月
+    march: 03月
+    april: 04月
+    may: 05月
+    june: 06月
+    july: 07月
+    august: 08月
+    september: 09月
+    october: 10月
+    november: 11月
+    december: 12月
+  short:
+    january: "01"
+    february: "02"
+    march: "03"
+    april: "04"
+    may: "05"
+    june: "06"
+    july: "07"
+    august: "08"
+    september: "09"
+    october: "10"
+    november: "11"
+    december: "12"
+no_news: 无事勿扰...
+post:
+  created_in: 创建于
+  created_by: 作者
+  last_updated: 最近更新于
+references: 参考文献
+
+blog:
+  navigation_title: 博客
+categories:
+  fun: fun
+  work: work
+citation:
+  bibtex: "或使用 BibTeX 格式："
+  introduction: "如果文章对你有帮助，别忘了引用本文："
+contact_note: "留下你的联系方式，我会尽快回复。"
+cv:
+  address: Address
+  area: Area
+  awarder: Awarder
+  awards: Awards
+  basics: General information
+  certificates: Certificates
+  city: City
+  countryCode: Country code
+  courses: Courses
+  date: Date
+  education: Education
+  email: Email
+  endDate: End date
+  fluency: Fluency
+  highlights: Highlights
+  image: Image
+  institution: Institution
+  interests: Interests
+  issuer: Issuer
+  keywords: Keywords
+  label: Label
+  language: Language
+  languages: Languages
+  level: Level
+  location: Location
+  name: Name
+  network: Network
+  organization: Organization
+  phone: Phone
+  position: Position
+  postalCode: Postal Code
+  present: 至今
+  profiles: Profiles
+  projects: Projects
+  publications: Publications
+  publisher: Publisher
+  reference: Reference
+  references: References
+  region: Region
+  releaseDate: Release date
+  score: Score
+  skills: Skills
+  startDate: Start date
+  studyType: Study type
+  summary: Summary
+  table_of_contents: Table of Contents
+  title: Title
+  url: Url
+  username: 用户名
+  volunteer: Volunteer
+  work: Work
+footer:
+  copyright: "版权 "
+  last_updated: "最近更新: "
+footer_text: >
+  网页引擎<a href="https://jekyllrb.com/" target="_blank">Jekyll</a>, 
+  模版<a href="https://github.com/george-gca/multi-language-al-folio">multi-language-al-folio</a>,
+  搭建于<a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+newsletter:
+  back: Back
+  error: "Oops! Something went wrong, please try again."
+  subscribe: 订阅
+  subscribed: "成功订阅。"
+  subscribe_to_receive: "按个订阅呗客官："
+  too_many_signups: "Too many signups, please try again in a little while"
+  wait: "别急，再等等..."
+no_posts: "没事发生..."
+pagination:
+  page: page
+related_posts:
+  description: "再看看别的："
+  title: "觉得这篇文章还不错?"
+search:
+  dark_theme:
+    description: 切换夜间模式
+    title: 切换夜间模式
+  dropdown: Dropdown
+  email: 发邮件
+  footer:
+    close: to close
+    navigate: to navigate
+    parent: move to parent
+    select: to select
+  languages: 语言
+  light_theme:
+    description: 切换日间模式
+    title: 切换日间模式
+  navigation: 导航栏
+  news: News
+  placeholder: Type to start searching
+  posts: Posts
+  projects: Projects
+  socials: Socials
+  system_theme:
+    description: 切换系统主题模式
+    title: 切换系统主题模式
+  theme: 主题
+site_description: A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.

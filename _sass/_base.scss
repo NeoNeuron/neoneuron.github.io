@@ -31,7 +31,7 @@ table {
   }
 
   th {
-    font-weight: bold;
+    font-weight: normal;
   }
 }
 
@@ -773,6 +773,8 @@ footer.sticky-bottom {
         > em {
           border-bottom: 1px solid;
           font-style: normal;
+          font-weight: bold;
+          color: var(--global-theme-color);
         }
 
         > span.more-authors {
