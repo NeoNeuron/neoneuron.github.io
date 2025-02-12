@@ -6,8 +6,8 @@
 {% endif %}
 
 {% assign lang = site.active_lang | split: '-' | first %}
-{% if lang == 'pt' %}
-  {% assign lang = site.active_lang %}
+{% if lang == 'zh' %}
+  {% assign lang = site.active_lang | split: '-' | last %}
 {% endif %}
 
 {% if site.data.repositories.repo_description_lines_max %}

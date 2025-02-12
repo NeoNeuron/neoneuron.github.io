@@ -1,6 +1,6 @@
 {% assign lang = site.active_lang | split: '-' | first %}
-{% if lang == 'pt' %}
-  {% assign lang = site.active_lang %}
+{% if lang == 'zh' %}
+  {% assign lang = site.active_lang | split: '-' | last %}
 {% endif %}
 
 <div class="repo p-2 text-center">

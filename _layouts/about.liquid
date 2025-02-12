@@ -51,7 +51,7 @@ layout: default
 
 
     <!-- Latest posts -->
-    {% if page.latest_posts.enabled %}
+    {% if page.latest_posts and page.latest_posts.enabled %}
       <h2>
         <a href="{{ '/blog/' | relative_url }}" style="color: inherit; font-weight:bold;">{{ site.data[site.active_lang].strings.latest_posts }}</a>
       </h2>
@@ -77,8 +77,8 @@ layout: default
       </div>
     {% endif %}
 
-    {% if site.newsletter.enabled and site.footer_fixed %}
-      {% include scripts/newsletter.liquid center=true %}
+    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
+      {% include newsletter.liquid center=true %}
     {% endif %}
   </article>
 </div>
