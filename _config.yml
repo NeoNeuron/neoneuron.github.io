@@ -53,7 +53,7 @@ socials_in_search: true
 bib_search: true
 
 # Dimensions
-max_width: 930px
+max_width: 1000px
 
 # TODO: add layout settings (single page vs. multi-page)
 
@@ -91,6 +91,7 @@ lsi: false # produce an index for related posts
 # Pagination
 pagination:
   enabled: true
+  title: ":title - pagination.page :num"
 
 related_blog_posts:
   enabled: false
@@ -109,7 +110,6 @@ giscus:
   input_position: bottom         # whether to display input form below (bottom) or above (top) the comments
   theme: preferred_color_scheme  # name of the color scheme (preferred works well with al-folio light/dark mode)
   emit_metadata: 0
-  lang: en
 
 # Disqus comments (DEPRECATED)
 # disqus_shortname: al-folio # put your disqus shortname
@@ -170,10 +170,12 @@ exclude:
   - lighthouse_results/
   - package.json
   - package-lock.json
-  - _pages/about_einstein.md
+  - _pages/en-us/about_einstein.md
+  - _pages/pt-br/about_einstein.md
   - purgecss.config.js
   - README.md
   - readme_preview/
+  - UPGRADING.md
   - vendor
 keep_files:
   - CNAME
@@ -208,6 +210,7 @@ defaults:
       sitemap: false
 
 sass:
+  sourcemap: never
   style: compressed
 
 # -----------------------------------------------------------------------------
@@ -618,8 +621,11 @@ third_party_libraries:
 # -----------------------------------------------------------------------------
 
 # jekyll_get_json:
-  # - data: resume
-  #   json: assets/json/resume.json # it can also be an url
+#   - data: resume_en-us
+#     json: assets/json/resume_en-us.json # it can also be an url
+#   - data: resume_zh-cn
+#     json: assets/json/resume_zh-cn.json # it can also be an url
+
 jsonresume:
   - basics
   - work

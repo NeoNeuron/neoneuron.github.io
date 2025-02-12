@@ -10,9 +10,9 @@ profile:
   image: anime-avatar.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Computational Neuroscienist</p>
-    <p>Applied Math PhD Candidate</p>
-    <p>Amateur Powerlifter</p>
+    <p>Computational Neuroscienist<br>
+    Applied Math PhD Candidate<br>
+    Amateur Powerlifter</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page

@@ -10,9 +10,9 @@ profile:
   image: anime-avatar.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>计算神经科学家</p>
-    <p>应用数学方向博士生</p>
-    <p>力量举爱好者</p>
+    <p>计算神经科学家<br>
+    应用数学方向博士生<br>
+    力量举爱好者</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page

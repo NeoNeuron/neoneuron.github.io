@@ -22,7 +22,7 @@ pagination:
 <div class="post">
 
 {% assign blog_name_size = page.blog_name | size %}
-{% assign blog_description_size = page.blog_description | size %}
+{% assign blog_description_size = page.description | size %}
 
 {% if blog_name_size > 0 or blog_description_size > 0 %}
 
@@ -144,7 +144,7 @@ pagination:
       </h3>
       <p>{{ post.description }}</p>
       <p class="post-meta">
-        {% if site.active_lang == 'en' %}{{ read_time }} min read {% else %}阅读时间 约 {{ read_time }} 分钟 {% endif %} &nbsp; &middot; &nbsp;
+        {% if site.active_lang == 'en-us' %}{{ read_time }} min read {% else %}阅读时间 约 {{ read_time }} 分钟 {% endif %} &nbsp; &middot; &nbsp;
         {% include date_format.liquid format="long" date=post.date %}
         {% if post.external_source %}
         &nbsp; &middot; &nbsp; {{ post.external_source }}

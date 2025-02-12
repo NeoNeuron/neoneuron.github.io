@@ -23,10 +23,12 @@ jobs:
         run: |
           echo "Today is $TODAY"
           shopt -s nullglob
-          for file in _scheduled/${TODAY}-*.md; do
+          for file in _scheduled/**/${TODAY}-*.md; do
             echo "Found scheduled: $file"
-            mv "$file" "_posts/"
-            echo "Moved $file to _posts/"
+            parent_dir="$(dirname "$file")"
+            language_dir="$(basename "$parent_dir")"
+            mv "$file" "_posts/$language_dir/"
+            echo "Moved $file to _posts/$language_dir/"
           done
 
       - name: Commit and push changes
