@@ -131,8 +131,8 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/zh-cn/news/2022-11-CSIAM_oral/";
-            },},{id: "news-siam-dynamical-system-2023-口头报告-sparkles-smile",
-          title: 'SIAM Dynamical System 2023 口头报告 :sparkles: :smile:',
+            },},{id: "news-美国工业与应用数学学会应用动力系统分会-2023-口头报告-sparkles-smile",
+          title: '美国工业与应用数学学会应用动力系统分会 2023 口头报告 :sparkles: :smile:',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/zh-cn/news/2023-05-SIAM_oral/";
@@ -146,11 +146,24 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/zh-cn/news/2023-08-ICIAM_poster/";
-            },},{id: "news-新文章发表在-pnas-sparkles-smile",
-          title: '新文章发表在 PNAS :sparkles: :smile:',
+            },},{id: "news-关于-因果推断网络重构-新文章发表在美国科学院院刊-pnas-sparkles-smile",
+          title: '关于“因果推断网络重构“新文章发表在美国科学院院刊（PNAS） :sparkles: :smile:',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/zh-cn/news/2024-03-PNAS_paper/";
+            },},{id: "news-新海报入选2024中国神经科学年会",
+          title: '新海报入选2024中国神经科学年会',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/zh-cn/news/2024-09-CNS_poster/";
+            },},{id: "news-多脑区循环神经网络训练框架被cosyne2025接收-将作为墙报展示-tada",
+          title: '多脑区循环神经网络训练框架被COSYNE2025接收，将作为墙报展示。:tada:',
+          description: "",
+          section: "News",},{id: "news-新海报入选第四届神经计算青年研讨会",
+          title: '新海报入选第四届神经计算青年研讨会',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/zh-cn/news/2025-01-SYNCB_poster/";
             },},{
         id: 'social-email',
         title: '发邮件',

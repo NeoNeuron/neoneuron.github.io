@@ -131,8 +131,8 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/2022-11-CSIAM_oral/";
-            },},{id: "news-new-talk-on-siam-dynamical-system-2023",
-          title: 'New talk on SIAM Dynamical System 2023',
+            },},{id: "news-new-talk-on-siam-conference-for-applied-dynamical-system-2023",
+          title: 'New talk on SIAM Conference for Applied Dynamical System 2023',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/2023-05-SIAM_oral/";
@@ -151,6 +151,19 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/2024-03-PNAS_paper/";
+            },},{id: "news-new-poster-on-annual-meeting-of-chinese-neuroscience-society-2024",
+          title: 'New poster on Annual meeting of Chinese Neuroscience Society (2024)',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2024-09-CNS_poster/";
+            },},{id: "news-recent-work-about-multi-area-rnn-has-been-accepted-as-a-poster-at-cosyne-2025-tada",
+          title: 'Recent work about multi-area RNN has been accepted as a poster at COSYNE...',
+          description: "",
+          section: "News",},{id: "news-new-poster-on-the-fourth-symposium-on-neural-computation-and-beyond",
+          title: 'New poster on the fourth Symposium on Neural Computation and Beyond',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/2025-01-SYNCB_poster/";
             },},{
         id: 'social-email',
         title: 'Send an email',
