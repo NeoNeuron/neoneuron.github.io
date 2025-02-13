@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "新文章发表在 PNAS :sparkles: :smile:" 
+title: "关于“因果推断网络重构“新文章发表在美国科学院院刊（PNAS） :sparkles: :smile:" 
 date: 2024-03-29 08:00:00+0800
 categories: paper
 tags: causality, correlation, mutual-information, Granger-causality, transfer-entropy, neural-networks 

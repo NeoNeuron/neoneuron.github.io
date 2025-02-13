@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "New talk on SIAM Dynamical System 2023"
+title: "New talk on SIAM Conference for Applied Dynamical System 2023"
 date: 2023-05-18 12:00:00-0700
 categories: Symposium
 tags: causality, correlation, mutual-information, Granger-causality, transfer-entropy, neural-networks 
