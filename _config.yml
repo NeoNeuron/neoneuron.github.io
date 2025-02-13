@@ -620,9 +620,9 @@ third_party_libraries:
 # Get external JSON data
 # -----------------------------------------------------------------------------
 
-# jekyll_get_json:
-#   - data: resume_en-us
-#     json: assets/json/resume_en-us.json # it can also be an url
+jekyll_get_json:
+  - data: resume_en-us
+    json: assets/json/resume_en-us.json # it can also be an url
 #   - data: resume_zh-cn
 #     json: assets/json/resume_zh-cn.json # it can also be an url
 
