@@ -63,34 +63,35 @@ cv:
   address: Address
   area: Area
   awarder: Awarder
-  awards: Awards
+  awards: 获奖情况
   basics: General information
   certificates: Certificates
   city: City
   countryCode: Country code
   courses: Courses
   date: Date
-  education: Education
-  email: Email
-  endDate: End date
-  fluency: Fluency
-  highlights: Highlights
-  image: Image
-  institution: Institution
-  interests: Interests
-  issuer: Issuer
-  keywords: Keywords
-  label: Label
-  language: Language
-  languages: Languages
-  level: Level
-  location: Location
+  education: 教育经历
+  email: 邮箱
+  endDate: 结束日期
+  fluency: 流利程度
+  highlights: 亮点
+  image: 图片
+  institution: 机构
+  interests: 兴趣
+  issuer: 颁发者
+  keywords: 关键词
+  label: 标签
+  language: 语言
+  languages: 语言
+  level: 级别
+  location: 位置
   name: Name
   network: Network
   organization: Organization
   phone: Phone
   position: Position
   postalCode: Postal Code
+  posters: 墙报
   present: 至今
   profiles: Profiles
   projects: Projects
@@ -106,6 +107,7 @@ cv:
   studyType: Study type
   summary: Summary
   table_of_contents: Table of Contents
+  talks: 口头报告
   title: Title
   url: Url
   username: 用户名

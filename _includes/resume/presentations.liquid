@@ -1,0 +1,35 @@
+<ul class="card-text font-weight-light list-group list-group-flush">
+  {% for content in data[1] %}
+    <li class="list-group-item">
+      <div class="row">
+        <h6 class="title font-weight-bold">
+          <i class="fa-solid fa-person-chalkboard"></i>
+          {{ content.title }}
+        </h6>
+          {% for item in content.conferences %}
+            <div class="row col-md-12 ml-0 mt-1">
+              <div class="col-xs-2 cl-sm-2 col-md-2 text-center date-column">
+                {% if item.date %} {% assign date = item.date | split: '-' | join: '.' %} {% else %} {% assign date = '' %} {% endif %}
+                <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px"> {{ date }} </span>
+              </div>
+              <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
+                <h6 class="font-weight-light ml-0 ml-md-4">
+                  <a href="{{ item.url }}">{{ item.name }}</a>
+                </h6>
+                {% if item.location %}
+                  <tr>
+                    <td>
+                      <p class="location ml-0 ml-md-4">
+                        <i class="fa-solid fa-location-dot iconlocation"></i>
+                        {{ item.location }}
+                      </p>
+                    </td>
+                  </tr>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+      </div>
+    </li>
+  {% endfor %}
+</ul>

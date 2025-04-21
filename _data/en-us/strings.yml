@@ -15,6 +15,7 @@ bibliography:
   website: Website
 latest_posts: latest posts
 news: news
+selected_publications: selected publications
 months:
   long:
     january: January
@@ -48,7 +49,6 @@ post:
   created_by: by
   last_updated: last updated in
 references: References
-selected_publications: selected publications
 
 blog:
   navigation_title: blog
@@ -91,6 +91,7 @@ cv:
   phone: Phone
   position: Position
   postalCode: Postal Code
+  posters: Posters
   present: Present
   profiles: Profiles
   projects: Projects
@@ -106,6 +107,7 @@ cv:
   studyType: Study type
   summary: Summary
   table_of_contents: Table of Contents
+  talks: Talks
   title: Title
   url: Url
   username: Username

@@ -117,6 +117,10 @@ layout: default
                   {% include resume/interests.liquid %}
                 {% when 'certificates' %}
                   {% include resume/certificates.liquid %}
+                {% when 'talks' %}
+                  {% include resume/presentations.liquid %}
+                {% when 'posters' %}
+                  {% include resume/presentations.liquid %}
                 {% when 'references' %}
                   {% include resume/references.liquid %}
                 {% else %}

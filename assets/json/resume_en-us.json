@@ -129,7 +129,111 @@
       "url": ""
     }
   ],
-  "publications": [],
+  "talks": [
+    {
+      "title": "Linking causal and structural connectivity in pulse-output nonlinear networks.",
+      "conferences": [
+        {
+          "name": "7th Symposium for Outstanding Ph.D Students in Computational & Applied Mathematics",
+          "date": "2024-11",
+          "location": "Beijing, China",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "title": "Quantitative relations among causality measures with applications to pulse-output nonlinear network reconstruction.",
+      "conferences": [
+        {
+          "name": "SIAM Conference on Applications of Dynamical Systems (DS23)",
+          "date": "2023-05",
+          "location": "Portland, Oregon, USA",
+          "url": ""
+        },
+        {
+          "name": "The Annual Meeting of the China Society for industrial and Applied Mathematics (CSIAM2022)",
+          "date": "2022-11",
+          "location": "Online",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "title": "Modeling attentional modulated spike count correlation in macaque V1.",
+      "conferences": [
+        {
+          "name": "The 3rd Chinese Computational and Cognitive Neuroscience Conference",
+          "date": "2021-06",
+          "location": "Online",
+          "url": ""
+        }
+      ]
+    }
+  ],
+  "posters": [
+    {
+      "title": "Unveiling the cognitive computation using multi-area RNN with biological constraints.",
+      "conferences": [
+        {
+          "name": "The 22nd Annual Computational and Systems Neuroscience (COSYNE)",
+          "date": "2025-03",
+          "location": "Montreal, Canada",
+          "url": "https://www.cosyne.org/"
+        }
+      ]
+    },
+    {
+      "title": "Nonlinear network reconstruction using pairwise time-delayed transfer entropy.",
+      "conferences": [
+        {
+          "name": "The 4th Symposium on Neural Computation and Beyond (SYNCB)",
+          "date": "2025-01",
+          "location": "Shanghai, China",
+          "url": ""
+        },
+        {
+          "name": "The 17th Annual Meeting of the Chinese Neuroscience Society",
+          "date": "2024-09",
+          "location": "Suzhou, China",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "title": "Quantitative relations among causality measures with applications to pulse-output nonlinear network reconstruction.",
+      "conferences": [
+        {
+          "name": "The 10th International Congress on Industrial and Applied Mathematics (ICIAM2023)",
+          "date": "2023-08",
+          "location": "Waseda University, Tokyo, Japan",
+          "url": ""
+        },
+        {
+          "name": "The 16th Annual Meeting of the Chinese Neuroscience Society & 2nd CJK International Meeting",
+          "date": "2023-08",
+          "location": "Zhuhai, China",
+          "url": ""
+        },
+        {
+          "name": "The 4th Chinese Computational and Cognitive Neuroscience Conference",
+          "date": "2022-06",
+          "location": "Online",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "title": "Modeling Attentional Modulated Spike Count Correlation in Macaque V1.",
+      "conferences": [
+        {
+          "name": "The 3rd Chinese Computational and Cognitive Neuroscience Conference",
+          "date": "2021-06",
+          "location": "Online",
+          "url": ""
+        }
+      ]
+    }
+  ],
   "skills": [
     {
       "name": "Python",
