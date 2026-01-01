@@ -230,7 +230,22 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/2025-01-SYNCB_poster/";
-            },},{
+            },},{id: "news-i-passed-my-phd-defence-tada",
+          title: 'I passed my PhD defence. :tada:',
+          description: "",
+          section: "News",},{id: "news-i-have-been-awarded-my-phd-degree-in-applied-mathematics-tada",
+          title: 'I have been awarded my PhD degree in applied mathematics. :tada:',
+          description: "",
+          section: "News",},{id: "news-i-am-starting-my-new-postdoc-position-at-école-normale-supérieure-in-paris",
+          title: 'I am starting my new postdoc position at École Normale Supérieure in Paris....',
+          description: "",
+          section: "News",},{id: "news-our-recent-work-emergent-hierarchical-representations-for-multi-task-learning-in-anatomy-constrained-rnns-has-been-accepted-as-a-poster-at-cosyne-2026-tada",
+          title: 'Our recent work Emergent hierarchical representations for multi-task learning in anatomy-constrained RNNs has...',
+          description: "",
+          section: "News",},{id: "news-our-new-paper-anatomical-connectivity-reconstruction-of-biological-neuronal-networks-using-granger-causality-has-been-accepted-as-a-research-article-by-neural-networks-tada",
+          title: 'Our new paper Anatomical Connectivity Reconstruction of Biological Neuronal Networks Using Granger Causality...',
+          description: "",
+          section: "News",},{
         id: 'social-email',
         title: 'Send an email',
         section: 'Socials',
