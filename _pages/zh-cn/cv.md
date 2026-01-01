@@ -5,7 +5,7 @@ permalink: /cv/
 title: 简历
 nav: true
 nav_order: 1
-cv_pdf: CV_Kai_Chen_Feb2025.pdf
+cv_pdf: CV_Kai_Chen_Jan2026.pdf
 toc:
   sidebar: right
 ---

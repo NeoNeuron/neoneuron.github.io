@@ -53,23 +53,23 @@ references: 参考文献
 blog:
   navigation_title: 博客
 categories:
-  fun: fun
-  work: work
+  fun: 娱乐
+  work: 工作
 citation:
   bibtex: "或使用 BibTeX 格式："
   introduction: "如果文章对你有帮助，别忘了引用本文："
 contact_note: "留下你的联系方式，我会尽快回复。"
 cv:
-  address: Address
-  area: Area
-  awarder: Awarder
+  address: 地址
+  area: 区域
+  awarder: 授奖者
   awards: 获奖情况
-  basics: General information
-  certificates: Certificates
-  city: City
-  countryCode: Country code
-  courses: Courses
-  date: Date
+  basics: 基本信息
+  certificates: 证书
+  city: 城市
+  countryCode: 国家代码
+  courses: 课程
+  date: 日期
   education: 教育经历
   email: 邮箱
   endDate: 结束日期
@@ -85,52 +85,52 @@ cv:
   languages: 语言
   level: 级别
   location: 位置
-  name: Name
-  network: Network
-  organization: Organization
-  phone: Phone
-  position: Position
-  postalCode: Postal Code
+  name: 姓名
+  network: 网络
+  organization: 组织
+  phone: 电话
+  position: 职位
+  postalCode: 邮政编码
   posters: 墙报
   present: 至今
-  profiles: Profiles
-  projects: Projects
-  publications: Publications
-  publisher: Publisher
-  reference: Reference
-  references: References
-  region: Region
-  releaseDate: Release date
-  score: Score
-  skills: Skills
-  startDate: Start date
-  studyType: Study type
-  summary: Summary
-  table_of_contents: Table of Contents
+  profiles: 个人资料
+  projects: 项目
+  publications: 发表
+  publisher: 出版者
+  reference: 参考文献
+  references: 推荐人
+  region: 地区
+  releaseDate: 发布日期
+  score: 分数
+  skills: 技能
+  startDate: 开始日期
+  studyType: 学习类型
+  summary: 摘要
+  table_of_contents: 目录
   talks: 口头报告
-  title: Title
-  url: Url
+  title: 标题
+  url: 链接
   username: 用户名
-  volunteer: Volunteer
-  work: Work
+  volunteer: 志愿者
+  work: 工作
 footer:
   copyright: "版权 "
-  last_updated: "最近更新: "
+  last_updated: "最近更新"
 footer_text: >
   网页引擎<a href="https://jekyllrb.com/" target="_blank">Jekyll</a>, 
   模版<a href="https://github.com/george-gca/multi-language-al-folio">multi-language-al-folio</a>,
   搭建于<a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 newsletter:
-  back: Back
-  error: "Oops! Something went wrong, please try again."
+  back: 返回
+  error: "诶呀糟糕，出错了，过会儿再来吧"
   subscribe: 订阅
   subscribed: "成功订阅。"
   subscribe_to_receive: "按个订阅呗客官："
-  too_many_signups: "Too many signups, please try again in a little while"
+  too_many_signups: "注册过多，请稍后再试"
   wait: "别急，再等等..."
 no_posts: "没事发生..."
 pagination:
-  page: page
+  page: 页
 related_posts:
   description: "再看看别的："
   title: "觉得这篇文章还不错?"
@@ -141,22 +141,22 @@ search:
   dropdown: Dropdown
   email: 发邮件
   footer:
-    close: to close
-    navigate: to navigate
-    parent: move to parent
-    select: to select
+    close: 关闭
+    navigate: 导航
+    parent: 移动到上级
+    select: 选择
   languages: 语言
   light_theme:
     description: 切换日间模式
     title: 切换日间模式
   navigation: 导航栏
-  news: News
-  placeholder: Type to start searching
-  posts: Posts
-  projects: Projects
-  socials: Socials
+  news: 近期动态
+  placeholder: 输入以开始搜索
+  posts: 博客
+  projects: 项目
+  socials: 社交
   system_theme:
     description: 切换系统主题模式
     title: 切换系统主题模式
   theme: 主题
-site_description: A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+site_description: 一个简单的、空白的学术主题。基于 [*folio](https://github.com/bogoli/-folio) 设计。

@@ -1,7 +1,7 @@
 {
   "basics": {
-    "name": "Kai Chen",
-    "label": "Computational Neuroscientist | Ph.D in Mathematics",
+    "name": "陈开",
+    "label": "计算神经科学家 | 数学博士",
     "image": "/assets/img/anime-avatar.jpg",
     "email": "",
     "phone": "",
@@ -24,59 +24,59 @@
   },
   "education": [
     {
-      "institution": "Shanghai Jiao Tong University, Shanghai, China",
-      "location": "Shanghai, China",
+      "institution": "上海交通大学",
+      "location": "上海, 中国",
       "url": "https://www.sjtu.edu.cn/",
       "area": "",
-      "studyType": "Bachelor in Physics",
+      "studyType": "物理学学士",
       "startDate": "2013-09-01",
       "endDate": "2017-06-30",
       "score": "10",
       "courses": [
-        "Statistical Physics",
-        "Computational Physics",
-        "Biological Physics",
-        "Electrodynamics",
-        "Linear Algebra",
-        "Calculus",
-        "Partial Differential Equation",
-        "Complex Variables"
+        "统计物理",
+        "计算物理",
+        "生物物理",
+        "电动力学",
+        "线性代数",
+        "微积分",
+        "偏微分方程",
+        "复变函数"
       ]
     },
     {
-      "institution": "Shanghai Jiao Tong University, Shanghai, China",
-      "location": "Shanghai, China",
+      "institution": "上海交通大学",
+      "location": "上海, 中国",
       "url": "https://www.sjtu.edu.cn/",
       "area": "",
-      "studyType": "Master in Physics",
+      "studyType": "物理学硕士",
       "startDate": "2018-09-01",
       "endDate": "2020-06-30",
       "score": "10",
       "courses": [
-        "Advanced Statistical Physics",
-        "Biological Physics",
-        "Advanced Electrodynamics and Analytical Mechanics"]
+        "高级统计物理",
+        "生物物理",
+        "高级电动力学与分析力学"]
     },
     {
-      "institution": "Shanghai Jiao Tong University, Shanghai, China",
-      "location": "Shanghai, China",
+      "institution": "上海交通大学",
+      "location": "上海, 中国",
       "url": "https://www.sjtu.edu.cn/",
       "area": "",
-      "studyType": "Ph.D in Mathematics",
+      "studyType": "数学博士",
       "startDate": "2020-09-01",
       "endDate": "2025-09-30",
       "score": "10",
       "courses": [
-        "Scientific Computing",
-        "High performance Computing in ODEs and PDEs",
-        "Inverse Problems"]
+        "科学计算",
+        "偏微分方程中的高性能计算",
+        "反问题"]
     },
     {
-      "institution": "École Normale Supérieure (ENS), Paris, France",
-      "location": "Paris, France",
+      "institution": "法国巴黎高等师范学院 (École Normale Supérieure, ENS)",
+      "location": "巴黎, 法国",
       "url": "https://www.ens.psl.eu/",
       "area": "",
-      "studyType": "Postdoctoral Researcher",
+      "studyType": "博士后研究员",
       "startDate": "2020-10-01",
       "endDate": "",
       "score": "10"
@@ -146,7 +146,7 @@
         {
           "name": "7th Symposium for Outstanding Ph.D Students in Computational & Applied Mathematics",
           "date": "2024-11",
-          "location": "Beijing, China",
+          "location": "中国北京",
           "url": ""
         }
       ]
@@ -157,13 +157,13 @@
         {
           "name": "SIAM Conference on Applications of Dynamical Systems (DS23)",
           "date": "2023-05",
-          "location": "Portland, Oregon, USA",
+          "location": "美国俄勒冈州波特兰",
           "url": ""
         },
         {
           "name": "The Annual Meeting of the China Society for industrial and Applied Mathematics (CSIAM2022)",
           "date": "2022-11",
-          "location": "Online",
+          "location": "线上",
           "url": ""
         }
       ]
@@ -174,7 +174,7 @@
         {
           "name": "The 3rd Chinese Computational and Cognitive Neuroscience Conference",
           "date": "2021-06",
-          "location": "Online",
+          "location": "线上",
           "url": ""
         }
       ]
@@ -187,7 +187,7 @@
         {
           "name": "The 22nd Annual Computational and Systems Neuroscience (COSYNE)",
           "date": "2025-03",
-          "location": "Montreal, Canada",
+          "location": "加拿大蒙特利尔",
           "url": "https://www.cosyne.org/"
         }
       ]
@@ -198,13 +198,13 @@
         {
           "name": "The 4th Symposium on Neural Computation and Beyond (SYNCB)",
           "date": "2025-01",
-          "location": "Shanghai, China",
+          "location": "中国上海",
           "url": ""
         },
         {
           "name": "The 17th Annual Meeting of the Chinese Neuroscience Society",
           "date": "2024-09",
-          "location": "Suzhou, China",
+          "location": "中国苏州",
           "url": ""
         }
       ]
@@ -215,19 +215,19 @@
         {
           "name": "The 10th International Congress on Industrial and Applied Mathematics (ICIAM2023)",
           "date": "2023-08",
-          "location": "Waseda University, Tokyo, Japan",
+          "location": "日本东京早稻田大学",
           "url": ""
         },
         {
           "name": "The 16th Annual Meeting of the Chinese Neuroscience Society & 2nd CJK International Meeting",
           "date": "2023-08",
-          "location": "Zhuhai, China",
+          "location": "中国珠海",
           "url": ""
         },
         {
           "name": "The 4th Chinese Computational and Cognitive Neuroscience Conference",
           "date": "2022-06",
-          "location": "Online",
+          "location": "线上",
           "url": ""
         }
       ]
@@ -238,7 +238,7 @@
         {
           "name": "The 3rd Chinese Computational and Cognitive Neuroscience Conference",
           "date": "2021-06",
-          "location": "Online",
+          "location": "线上",
           "url": ""
         }
       ]
@@ -288,36 +288,36 @@
   ],
   "languages": [
     {
-      "language": "Manadarin",
-      "fluency": "Native",
+      "language": "普通话",
+      "fluency": "母语",
       "icon": ""
     },
     {
-      "language": "English",
-      "fluency": "Fluent",
+      "language": "英语",
+      "fluency": "流利",
       "icon": ""
     },
     {
-      "language": "French",
-      "fluency": "Beginner",
+      "language": "法语",
+      "fluency": "入门",
       "icon": ""
     }
   ],
   "interests": [
     {
-      "name": "Chinese Traditional Culture",
+      "name": "中国传统艺术",
       "icon": "fa-solid fa-pen",
       "keywords": [
-        "Chinese Calligraphy",
-        "Chinese Flute"
+        "中国传统书法",
+        "中国竹笛"
       ]
     },
     {
-      "name": "Sports",
+      "name": "运动",
       "icon": "fa-solid fa-dumbbell",
       "keywords": [
-        "Powerlifting",
-        "Road Cycling"
+        "力量举",
+        "公路自行车"
       ]
     }
   ],
@@ -402,13 +402,13 @@
   ],
   "references": [
     {
-      "name": "Professor Douglas Zhou",
+      "name": "周栋焯教授",
       "icon": "fa-solid fa-user",
       "url": "https://ins.sjtu.edu.cn/people/zdz/",
       "reference": ""
     },
     {
-      "name": "Professor Songting Li",
+      "name": "李松挺教授",
       "icon": "fa-solid fa-user",
       "url": "https://ins.sjtu.edu.cn/people/songtingli/",
       "reference": ""
