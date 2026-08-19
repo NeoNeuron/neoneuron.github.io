@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "COSYNE 2025 poster"
+title: "COSYNE 2025 海报入选"
 date: 2024-12-24 12:00:00+0800
 inline: true
 ---

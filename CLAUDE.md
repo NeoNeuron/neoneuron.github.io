@@ -13,7 +13,8 @@ bundle install                      # install Ruby gem dependencies (first time 
 bundle exec jekyll serve --lsi      # local dev server with live reload at http://localhost:4000; --lsi enables related-posts
 bundle exec jekyll build            # one-off production build into _site/ (same as bin/cibuild)
 docker-compose up                   # alternative dev server via Docker (no local Ruby needed)
-npx prettier --write .              # format .liquid/.md/.yml/etc. per .prettierrc (printWidth 150)
+npm install                         # install Prettier + the liquid plugin (needed before any prettier command)
+npx prettier --write <files>        # format .liquid/.md/.yml/etc. per .prettierrc (printWidth 150)
 npx prettier . --check              # exactly what CI enforces
 ```
 
@@ -22,7 +23,7 @@ Ruby is pinned to 3.2.7 locally (`.ruby-version`); the deploy workflow uses 3.3.
 There is no test suite. Two independent CI checks run on push/PR to `main`:
 
 - `deploy.yml` — builds the site (broken Liquid or bad front matter fails here) and, on push, deploys `_site/` to `gh-pages`.
-- `prettier.yml` — runs `npx prettier . --check`. Formatting failures are a *separate* red X from build failures; run Prettier before committing template/YAML/Markdown changes.
+- `prettier.yml` — runs `npx prettier . --check`. This is a _separate_ red X from build failures, and **it is already failing on `main`**: ~62 tracked files (most `_news/*`, `_posts/*`, `_config.yml`, `README.md`, vendored `_sass/flag-icons/*`) do not conform. Do **not** run `npx prettier --write .` to fix it — that rewrites the whole tree and buries your change in an unrelated diff. Format only the files you touched.
 
 Do not run `bin/deploy` manually — it force-pushes a built `gh-pages` branch and is the legacy path superseded by `deploy.yml`.
 

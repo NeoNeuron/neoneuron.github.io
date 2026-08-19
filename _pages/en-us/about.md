@@ -42,7 +42,7 @@ at the [Laboratoire de Neurosciences Cognitives & Computationnelles](https://lnc
 
 Before that, I accomplished my Ph.D. training in Applied Mathematics at the [Lab of Computational Neuroscience](https://lcns-sjtu.github.io), [Institute of Natural Science](https://ins.sjtu.edu.cn/), [Shanghai Jiao Tong University](https://www.sjtu.edu.cn), under the supervision of Prof. [Douglas Zhou](https://ins.sjtu.edu.cn/people/zdz/) and Prof. [Songting Li](https://ins.sjtu.edu.cn/people/songtingli/).
 
-Earlier still, I studied physics for both my master’s and bachelor’s degrees at Shanghai Jiao Tong University.
+Earlier still, I studied physics at the School of Physics and Astronomy, Shanghai Jiao Tong University, where I received my bachelor’s degree and went on into the master’s program before moving to the PhD.
 
 **Research Interests**: Computational Neuroscience, Machine Learning, Applied Mathematics.
 

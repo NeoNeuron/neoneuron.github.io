@@ -138,7 +138,7 @@ search:
   dark_theme:
     description: 切换夜间模式
     title: 切换夜间模式
-  dropdown: Dropdown
+  dropdown: 下拉菜单
   email: 发邮件
   footer:
     close: 关闭
@@ -159,4 +159,4 @@ search:
     description: 切换系统主题模式
     title: 切换系统主题模式
   theme: 主题
-site_description: 一个简单的、空白的学术主题。基于 [*folio](https://github.com/bogoli/-folio) 设计。
+site_description: 陈开的个人主页。计算神经科学研究者，关注网络动力学、神经编码，以及感知与认知背后的计算机制。

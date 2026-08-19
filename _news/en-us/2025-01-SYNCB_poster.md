@@ -3,15 +3,16 @@ layout: post
 title: "New poster on the fourth Symposium on Neural Computation and Beyond"
 date: 2025-01-18 12:00:00+0800
 categories: poster
-tags: causality, correlation, mutual-information, Granger-causality, transfer-entropy, neural-networks 
+tags: causality, correlation, mutual-information, Granger-causality, transfer-entropy, neural-networks
 ---
 
+> Check the [link](http://ins.sjtu.edu.cn:3300/conferences/50/) for detailed information.
 
 #### Nonlinear pulse-coupled network reconstruction using pairwise time-delayed transfer entropy
 
 Kai Chen, Zhong-qi K. Tian, Wei P. Dai, Songting Li, David W. McLaughlin, Douglas Zhou
 
-**Abstract**: 
+**Abstract**:
 Accessing structural connectivity information is crucial for understanding intricate
 functions of complex networks. In situations where direct measurement of structural connectivity
 is limited, like in cortical neuronal networks, causal inference tools such as transfer entropy are

@@ -48,14 +48,11 @@
       "location": "Shanghai, China",
       "url": "https://www.sjtu.edu.cn/",
       "area": "",
-      "studyType": "Master in Physics",
+      "studyType": "Master's Program in Physics (transferred to the PhD program)",
       "startDate": "2018-09-01",
       "endDate": "2020-06-30",
       "score": "10",
-      "courses": [
-        "Advanced Statistical Physics",
-        "Biological Physics",
-        "Advanced Electrodynamics and Analytical Mechanics"]
+      "courses": ["Advanced Statistical Physics", "Biological Physics", "Advanced Electrodynamics and Analytical Mechanics"]
     },
     {
       "institution": "Shanghai Jiao Tong University, Shanghai, China",
@@ -66,10 +63,7 @@
       "startDate": "2020-09-01",
       "endDate": "2025-09-30",
       "score": "10",
-      "courses": [
-        "Scientific Computing",
-        "High performance Computing in ODEs and PDEs",
-        "Inverse Problems"]
+      "courses": ["Scientific Computing", "High performance Computing in ODEs and PDEs", "Inverse Problems"]
     },
     {
       "institution": "École Normale Supérieure (ENS), Paris, France",
@@ -249,41 +243,31 @@
       "name": "Python",
       "level": "Master",
       "icon": "fa-brands fa-python",
-      "keywords": [
-        "efficient RNN/ANN training and data analysis, experienced user of PyTorch, Jax/Flax, scikit-learn, neurogym, etc."
-      ]
+      "keywords": ["efficient RNN/ANN training and data analysis, experienced user of PyTorch, Jax/Flax, scikit-learn, neurogym, etc."]
     },
     {
       "name": "C/C++",
       "level": "Master",
       "icon": "fa-solid fa-c",
-      "keywords": [
-        "fast simulator for spiking neuronal networks"
-      ]
+      "keywords": ["fast simulator for spiking neuronal networks"]
     },
     {
       "name": "Shell",
       "level": "Master",
       "icon": "fa-solid fa-terminal",
-      "keywords": [
-        "regular maintenance of high performance computing servers/clusters"
-      ]
+      "keywords": ["regular maintenance of high performance computing servers/clusters"]
     },
     {
       "name": "MATLAB/Octave",
       "level": "Master",
       "icon": "fa-solid fa-code",
-      "keywords": [
-        "data analsis"
-      ]
+      "keywords": ["data analysis"]
     },
     {
       "name": "LaTeX",
       "level": "Master",
       "icon": "fa-solid fa-font",
-      "keywords": [
-        "manuscript writing"
-      ]
+      "keywords": ["manuscript writing"]
     }
   ],
   "languages": [
@@ -307,18 +291,12 @@
     {
       "name": "Chinese Traditional Culture",
       "icon": "fa-solid fa-pen",
-      "keywords": [
-        "Chinese Calligraphy",
-        "Chinese Flute"
-      ]
+      "keywords": ["Chinese Calligraphy", "Chinese Flute"]
     },
     {
       "name": "Sports",
       "icon": "fa-solid fa-dumbbell",
-      "keywords": [
-        "Powerlifting",
-        "Road Cycling"
-      ]
+      "keywords": ["Powerlifting", "Road Cycling"]
     }
   ],
   "projects": [

@@ -36,11 +36,11 @@ latest_posts:
 
 🌟 我喜欢公路骑行🚴🏻‍♂️，通常把它当作思考工作和生活的方式，同时假装自己不是在思考。
 
-目前，我是一名法国国家科研中心[CNRS](https://www.cnrs.fr/en)博士后研究员，依托在法国巴黎高等师范学院([École Normale Supérieure (ENS)](https://www.ens.psl.eu/))认知与计算神经科学实验室[Srdjan Ostojic](https://lnc2.dec.ens.fr/en/teams/network-dynamics-and-computations)博士课题组，在其指导下开展工作。
+目前，我正在法国🇫🇷开启新的人生旅程。我是一名法国国家科研中心[CNRS](https://www.cnrs.fr/en)博士后研究员，依托在法国巴黎高等师范学院([École Normale Supérieure (ENS)](https://www.ens.psl.eu/))[认知与计算神经科学实验室](https://lnc2.dec.ens.fr/en)，在[Srdjan Ostojic](https://lnc2.dec.ens.fr/en/teams/network-dynamics-and-computations)博士的指导下开展工作，该课题组也被称为“低秩（low-rank）”课题组。
 
-此前，我在 [上海交通大学](https://www.sjtu.edu.cn) [自然科学研究院](https://ins.sjtu.edu.cn/) [计算神经科学实验室](https://lcns-sjtu.github.io) 攻读应用数学博士学位，师从[周栋焯](https://ins.sjtu.edu.cn/people/zdz/)教授。
+此前，我在 [上海交通大学](https://www.sjtu.edu.cn) [自然科学研究院](https://ins.sjtu.edu.cn/) [计算神经科学实验室](https://lcns-sjtu.github.io) 攻读应用数学博士学位，师从[周栋焯](https://ins.sjtu.edu.cn/people/zdz/)教授与[李松挺](https://ins.sjtu.edu.cn/people/songtingli/)教授。
 
-此前，我在 上海交通大学 物理与天文学院 攻读物理学*本科*与*硕士*学位，并已获得*物理学学士*学位。
+更早之前，我在 上海交通大学 物理与天文学院 攻读物理学*本科*与*硕士*学位，并已获得*物理学学士*学位，其后转入博士阶段。
 
 **研究兴趣**: 计算神经科学，机器学习，应用数学。
 

@@ -9,12 +9,11 @@ last_name: Chen 陈开
 contact_note: >
   Feel free to reach through EMAIL
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Personal website of Kai Chen. Here, you may find its ideas about
+  Personal website of Kai Chen. Here, you may find his ideas about
   life, research, and technical stuffs. ENJOY the life!
-keywords: jekyll, academic-website, computational-neuroscience  # add your own keywords or leave empty
-
-lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: logo-w.png  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+keywords: jekyll, academic-website, computational-neuroscience # add your own keywords or leave empty
+lang: en-us # the language of your site (for example: en, fr, cn, ru, etc.)
+icon: logo-w.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://neoneuron.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/
@@ -102,13 +101,13 @@ related_blog_posts:
 giscus:
   repo: NeoNeuron/neoneuron.github.io # <your-github-user-name>/<your-github-repo-name>
   repo_id: R_kgDOHNsI5A
-  category: Comments             # name of the category under which discussions will be created
+  category: Comments # name of the category under which discussions will be created
   category_id: DIC_kwDOHNsI5M4CT1Q8
-  mapping: title                 # identify discussions by post title
-  strict: 1                      # use strict identification mode
-  reactions_enabled: 1           # enable (1) or disable (0) emoji reactions
-  input_position: bottom         # whether to display input form below (bottom) or above (top) the comments
-  theme: preferred_color_scheme  # name of the color scheme (preferred works well with al-folio light/dark mode)
+  mapping: title # identify discussions by post title
+  strict: 1 # use strict identification mode
+  reactions_enabled: 1 # enable (1) or disable (0) emoji reactions
+  input_position: bottom # whether to display input form below (bottom) or above (top) the comments
+  theme: preferred_color_scheme # name of the color scheme (preferred works well with al-folio light/dark mode)
   emit_metadata: 0
 
 # Disqus comments (DEPRECATED)
@@ -246,14 +245,13 @@ jekyll-archives:
     category: "/blog/category/:name/"
 
 display_tags: [RNN] # this tags will be dispalyed on the front page of your blog
-display_categories: ['Journal Club'] # these categories will be displayed on the front page of your blog
+display_categories: ["Journal Club"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
 # -----------------------------------------------------------------------------
 
 scholar:
-
   last_name: [Chen]
   first_name: [Kai, K.]
 

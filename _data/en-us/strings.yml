@@ -58,7 +58,7 @@ categories:
 citation:
   bibtex: "or as a BibTeX entry:"
   introduction: "If you found this useful, please cite this as:"
-contact_note: You can even add a little note about which of these is the best way to reach you.
+contact_note: Email is the surest way to reach me — I will get back to you as soon as I can.
 cv:
   address: Address
   area: Area
@@ -158,4 +158,4 @@ search:
     description: Change the theme of the site to System Default
     title: Use system default theme
   theme: Theme
-site_description: A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+site_description: Personal website of Kai Chen, a computational neuroscientist studying network dynamics, neural coding, and the computations behind perception and cognition.
