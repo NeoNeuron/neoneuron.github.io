@@ -176,16 +176,16 @@ ninja.data = [{
           window.location.href = "/zh-cn/blog/2020/KaiChen1/";
         
       },
-    },{id: "news-my-phd-qualification-is-passed-smile",
-          title: 'My PhD qualification is passed. :smile:',
+    },{id: "news-顺利通过博士学位资格考试-smile",
+          title: '顺利通过博士学位资格考试。:smile:',
           description: "",
           section: "近期动态",},{id: "news-新海报和口头汇报发表在-cccn2021-sparkles-smile",
           title: '新海报和口头汇报发表在 CCCN2021 :sparkles: :smile:',
           description: "",
           section: "近期动态",handler: () => {
               window.location.href = "/zh-cn/news/2021-06-CCCN_poster/";
-            },},{id: "news-my-phd-thesis-proposal-is-passed",
-          title: 'My PhD thesis proposal is passed.',
+            },},{id: "news-顺利通过博士论文开题答辩",
+          title: '顺利通过博士论文开题答辩。',
           description: "",
           section: "近期动态",},{id: "news-新海报发表在-cccn2022-sparkles-smile",
           title: '新海报发表在 CCCN2022 :sparkles: :smile:',
