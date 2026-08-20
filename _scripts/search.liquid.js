@@ -317,6 +317,7 @@ ninja.data = [
           title: '{{ l }}',
           section: '{{ site.data[site.active_lang].strings.search.languages }}',
           handler: () => {
+            saveScrollForLanguageSwitch();
             window.location.href = "{{ site.baseurl }}" + updatedUrl;
           },
         },
@@ -326,6 +327,7 @@ ninja.data = [
           title: '{{ l }}',
           section: '{{ site.data[site.active_lang].strings.search.languages }}',
           handler: () => {
+            saveScrollForLanguageSwitch();
             window.location.href = "{{ site.baseurl }}/{{ l }}" + updatedUrl;
           },
         },
