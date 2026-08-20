@@ -299,6 +299,7 @@ ninja.data = [{
           title: 'en-us',
           section: '语言',
           handler: () => {
+            saveScrollForLanguageSwitch();
             window.location.href = "" + updatedUrl;
           },
         },{

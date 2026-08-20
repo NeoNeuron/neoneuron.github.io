@@ -299,6 +299,7 @@ ninja.data = [{
           title: 'zh-cn',
           section: 'Languages',
           handler: () => {
+            saveScrollForLanguageSwitch();
             window.location.href = "/zh-cn" + updatedUrl;
           },
         },{
