@@ -10,11 +10,12 @@ nav_order: 3
 
 ### Teaching Assistant
 
+| 2026/06 ~ 2026/07 | Computational and Cognitive Neuroscience Summer School (@ Cold Spring Harbor Asia) |
 | 2024/09 ~ 2025/01 | Linear Algebra (Honors) |
 | 2024/06 ~ 2024/07 | Computational and Cognitive Neuroscience Summer School (@ Cold Spring Harbor Asia) |
 | 2023/09 ~ 2024/01 | Linear Algebra (Honors) |
 | 2022/09 ~ 2023/01 | Linear Algebra (Honors) |
-| 2022/08 ~ 2022/08 | CNeuro 2022 International Summer School (@ Tsinghua University) |
+| 2022/08 ~ 2022/08 | CNeuro 2022 International Summer School (@ Beijing, China / Basel, Switzerland) |
 | 2022/03 ~ 2022/06 | Probability and Statistics |
 | 2022/01 ~ 2022/01 | Computational Neuroscience Winter School (@ SJTU) |
 | 2021/09 ~ 2022/01 | Linear Algebra (Honors) |

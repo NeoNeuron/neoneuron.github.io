@@ -86,7 +86,7 @@
     },
     {
       "title": "Best Poster Award",
-      "date": "2024-01-24",
+      "date": "2021-07",
       "awarder": "The 3rd Chinese Computational and Cognitive Neuroscience Conference",
       "url": "https://shibs.cn/index.php/news/showNews/nid/308.shtml"
     },
@@ -98,13 +98,13 @@
     },
     {
       "title": "National Scholarship for Undergraduate",
-      "date": "2016-10",
+      "date": "2016-09",
       "awarder": "The Chinese Ministry of Education",
       "url": ""
     },
     {
       "title": "Successful Participant in COMAP's Mathematical Contest in Modeling",
-      "date": "2016-04",
+      "date": "2016-02",
       "awarder": "Consortium for Mathematics and its Applications (COMAP)",
       "url": "https://www.comap.com/contests/"
     },
@@ -128,12 +128,23 @@
     },
     {
       "title": "Champion in Shanghai Undergraduate Physicists' Tournament",
-      "date": "2014-06",
+      "date": "2014-08",
       "awarder": "Chinese Physical Society",
       "url": ""
     }
   ],
   "talks": [
+    {
+      "title": "Low-rank scaffold network: anchoring items to a continuous neural manifold.",
+      "conferences": [
+        {
+          "name": "Zhejiang University (Invited Talk)",
+          "date": "2026-08",
+          "location": "Zhejiang, China",
+          "url": ""
+        }
+      ]
+    },
     {
       "title": "Linking causal and structural connectivity in pulse-output nonlinear networks.",
       "conferences": [
@@ -175,6 +186,34 @@
     }
   ],
   "posters": [
+    {
+      "title": "Low-rank Attractor Scaffold Network: anchoring memory items to a continuous neural manifold (expected).",
+      "conferences": [
+        {
+          "name": "Bernstein Conference 2026",
+          "date": "2026-09",
+          "location": "Frankfurt am Main, Germany",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "title": "Emergent hierarchical representations for multi-task learning in anatomy-constrained RNNs.",
+      "conferences": [
+        {
+          "name": "The 23rd Annual Computational and Systems Neuroscience (COSYNE)",
+          "date": "2026-03",
+          "location": "Lisbon, Portugal",
+          "url": "https://www.cosyne.org/"
+        },
+        {
+          "name": "Paris Île-de-France Neuroscience, Theory, and Systems 2025 (PINTS 2025)",
+          "date": "2025-11",
+          "location": "Paris, France",
+          "url": ""
+        }
+      ]
+    },
     {
       "title": "Unveiling the cognitive computation using multi-area RNN with biological constraints.",
       "conferences": [
@@ -243,7 +282,7 @@
       "name": "Python",
       "level": "Master",
       "icon": "fa-brands fa-python",
-      "keywords": ["efficient RNN/ANN training and data analysis, experienced user of PyTorch, Jax/Flax, scikit-learn, neurogym, etc."]
+      "keywords": ["efficient RNN/ANN training and data analysis, experienced user of PyTorch, JAX/Flax, scikit-learn, etc."]
     },
     {
       "name": "C/C++",
@@ -267,12 +306,12 @@
       "name": "LaTeX",
       "level": "Master",
       "icon": "fa-solid fa-font",
-      "keywords": ["manuscript writing"]
+      "keywords": []
     }
   ],
   "languages": [
     {
-      "language": "Manadarin",
+      "language": "Mandarin",
       "fluency": "Native",
       "icon": ""
     },
@@ -296,22 +335,29 @@
     {
       "name": "Sports",
       "icon": "fa-solid fa-dumbbell",
-      "keywords": ["Powerlifting", "Road Cycling"]
+      "keywords": ["Weightlifting", "Road Cycling", "Rock Climbing"]
     }
   ],
   "projects": [
     {
-      "name": "Computational Mechanism of Multitasking Multi-area RNNs",
+      "name": "CHRONOLOGY: The geometry of temporal cognitive maps",
+      "summary": "",
+      "startDate": "2025-10",
+      "endDate": "",
+      "url": ""
+    },
+    {
+      "name": "Computational Mechanism of Anatomy-constrained Multitasking Multi-area RNNs",
       "summary": "",
       "startDate": "2024-06",
-      "endDate": "",
+      "endDate": "2025-12",
       "url": ""
     },
     {
       "name": "How Synaptic Configuration Shapes Learning and Memory via Synaptic Plasticity",
       "summary": "",
       "startDate": "2024-11",
-      "endDate": "",
+      "endDate": "2025-08",
       "url": ""
     },
     {
@@ -373,8 +419,38 @@
     {
       "name": "Femtosecond Pump-probe Spectroscopy of Protein Photosynthesis",
       "summary": "",
-      "startDate": "2016/08",
-      "endDate": "2016/09",
+      "startDate": "2016-08",
+      "endDate": "2016-09",
+      "url": ""
+    }
+  ],
+  "summerSchools": [
+    {
+      "name": "Computational and Cognitive Neuroscience Summer School",
+      "location": "Cold Spring Harbor Asia",
+      "startDate": "2023-07",
+      "endDate": "2023-07",
+      "url": ""
+    },
+    {
+      "name": "CNeuro 2021",
+      "location": "Tsinghua University, Beijing, China",
+      "startDate": "2021-08",
+      "endDate": "2021-08",
+      "url": ""
+    },
+    {
+      "name": "CNeuro 2019 (Auditing student)",
+      "location": "Tsinghua University, Beijing, China",
+      "startDate": "2019-07",
+      "endDate": "2019-07",
+      "url": ""
+    },
+    {
+      "name": "Computational Neuroscience Winter School [7 times]",
+      "location": "Shanghai Jiao Tong University",
+      "startDate": "2018-01",
+      "endDate": "2025-01",
       "url": ""
     }
   ],
