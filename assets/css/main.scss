@@ -4,17 +4,17 @@
 @charset "utf-8";
 
 // Dimensions
-$max-content-width: {{ site.max_width }};
+$max-content-width: {{ site.max_width }} !default;
 
 @import
-  "variables",
-  "themes",
-  "layout",
+  "site-variables",
+  "site-themes",
+  "site-layout",
   "base",
   "distill",
   "cv",
-  "tabs",
-  "typograms",
+  "site-tabs",
+  "site-typograms",
   "font-awesome/fontawesome",
   "font-awesome/brands",
   "font-awesome/solid",

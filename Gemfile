@@ -4,7 +4,9 @@ gem 'jekyll'
 
 # Core plugins that directly affect site building
 group :jekyll_plugins do
+    gem 'jekyll-3rd-party-libraries'
     gem 'jekyll-archives'
+    gem 'jekyll-cache-bust'
     gem 'jekyll-email-protect'
     gem 'jekyll-feed'
     gem 'jekyll-get-json'
@@ -24,6 +26,15 @@ group :jekyll_plugins do
     gem 'jemoji'
 
     gem 'classifier-reborn'  # used for content categorization during the build
+end
+
+# al-folio v1.x plugins (migration in progress: al_folio_core, al_folio_cv, for now)
+group :al_folio_plugins do
+    gem 'al_folio_core', '= 1.0.15'
+    gem 'al_folio_cv', '= 1.0.2'
+    gem 'al_folio_upgrade', '= 1.0.3'
+    gem 'al_citations', '= 1.0.1'
+    gem 'al_ext_posts', '= 1.0.3'
 end
 
 # Gems for development or external data fetching (outside :jekyll_plugins)

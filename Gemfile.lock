@@ -9,22 +9,41 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (8.1.3)
+    activesupport (7.2.3)
       base64
+      benchmark (>= 0.3)
       bigdecimal
       concurrent-ruby (~> 1.0, >= 1.3.1)
       connection_pool (>= 2.2.5)
       drb
       i18n (>= 1.6, < 2)
-      json
       logger (>= 1.4.2)
       minitest (>= 5.1)
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
-      uri (>= 0.13.1)
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
+    al_citations (1.0.1)
+      activesupport (>= 6.0, < 8.0)
+      jekyll (>= 3.9, < 5.0)
+      nokogiri (>= 1.13, < 2.0)
+    al_ext_posts (1.0.3)
+      feedjira (>= 3.2, < 5.0)
+      httparty (>= 0.18, < 1.0)
+      jekyll (>= 3.9, < 5.0)
+      nokogiri (>= 1.13, < 2.0)
+    al_folio_core (1.0.15)
+      jekyll (>= 3.9, < 5.0)
+      liquid (>= 4.0, < 6.0)
+    al_folio_cv (1.0.2)
+      jekyll (>= 3.9, < 5.0)
+      liquid (>= 4.0, < 6.0)
+    al_folio_upgrade (1.0.3)
+      al_folio_core (>= 1.0.0)
+      jekyll (>= 3.9, < 5.0)
+      liquid (>= 4.0, < 6.0)
     base64 (0.3.0)
+    benchmark (0.5.0)
     bibtex-ruby (6.2.0)
       latex-decode (~> 0.0)
       logger (~> 1.7)
@@ -118,6 +137,10 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
+    jekyll-3rd-party-libraries (0.0.1)
+      css_parser (>= 1.6, < 2.0)
+      jekyll (>= 3.6, < 5.0)
+      nokogiri (>= 1.8, < 2.0)
     jekyll (4.4.1)
       addressable (~> 2.4)
       base64 (~> 0.2)
@@ -138,6 +161,8 @@ GEM
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
     jekyll-archives (2.3.0)
+      jekyll (>= 3.6, < 5.0)
+    jekyll-cache-bust (0.0.1)
       jekyll (>= 3.6, < 5.0)
     jekyll-email-protect (1.1.0)
     jekyll-feed (0.17.0)
@@ -289,12 +314,19 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  al_citations (= 1.0.1)
+  al_ext_posts (= 1.0.3)
+  al_folio_core (= 1.0.15)
+  al_folio_cv (= 1.0.2)
+  al_folio_upgrade (= 1.0.3)
   classifier-reborn
   css_parser
   feedjira
   httparty
   jekyll
+  jekyll-3rd-party-libraries
   jekyll-archives
+  jekyll-cache-bust
   jekyll-email-protect
   jekyll-feed
   jekyll-get-json
@@ -317,4 +349,4 @@ DEPENDENCIES
   terser
 
 BUNDLED WITH
-   2.6.3
+  4.0.8

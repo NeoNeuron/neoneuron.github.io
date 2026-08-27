@@ -1,4 +1,10 @@
 # -----------------------------------------------------------------------------
+# Theme (al-folio v1.x migration in progress)
+# -----------------------------------------------------------------------------
+
+theme: al_folio_core
+
+# -----------------------------------------------------------------------------
 # Site settings
 # -----------------------------------------------------------------------------
 
@@ -155,6 +161,7 @@ kramdown:
 # Includes & excludes
 include: ["_pages", "_scripts"]
 exclude:
+  - al-folio-upgrade-report.md
   - bin/
   - CLAUDE.md
   - CONTRIBUTING.md
@@ -183,7 +190,9 @@ keep_files:
 
 # Plug-ins
 plugins:
+  - jekyll-3rd-party-libraries
   - jekyll-archives
+  - jekyll-cache-bust
   - jekyll-email-protect
   - jekyll-feed
   - jekyll-get-json
@@ -201,6 +210,49 @@ plugins:
   - jekyll-toc
   - jekyll-twitter-plugin
   - jemoji
+
+  # al-folio v1.x plugins (migration in progress: al_folio_core, al_folio_cv, for now)
+  - al_folio_core
+  - al_folio_cv
+  - al_folio_upgrade
+  - al_citations
+  - al_ext_posts
+
+# -----------------------------------------------------------------------------
+# al-folio API (v1.x) - required config contract for al_folio_core
+# -----------------------------------------------------------------------------
+
+al_folio:
+  api_version: 1
+  style_engine: tailwind
+  tailwind:
+    version: 4.1.18
+    preflight: false
+    css_entry: assets/tailwind/app.css
+  # distill: not adopting al_folio_distill - our own _layouts/distill.liquid
+  # and vendored assets/js/distillpub/* are kept as permanent local overrides
+  # (see plan: al_folio_distill only delegates rendering to an opaque tag with
+  # its own templates, bypassing our bilingual distill_scripts.liquid). Our
+  # vendored transforms.v2.js does load from the remote CDN, so allow_remote_loader
+  # reflects that honestly rather than contradicting it.
+  distill:
+    engine: distillpub-template
+    source: al-org-dev/distill-template#al-folio
+    allow_remote_loader: true
+  features:
+    cv:
+      enabled: true
+    distill:
+      enabled: false
+  compat:
+    bootstrap:
+      enabled: false # NOT adopted: al_folio_bootstrap_compat's CSS defines .col-1..12
+      # as CSS Grid columns, colliding with Bootstrap's flexbox .col-* width classes
+      # our templates depend on throughout (bib.liquid, header.liquid, footer.liquid,
+      # CV includes). Adopting it would require a full Tailwind-native rewrite of
+      # those templates - a separate redesign project, out of scope for this migration.
+      # Real Bootstrap/jQuery/MDB stay in head.liquid/scripts.liquid. Supported by
+      # al_folio_core through v1.2, deprecated v1.3, removed v2.0 - revisit before then.
 
 # Sitemap settings
 defaults:
