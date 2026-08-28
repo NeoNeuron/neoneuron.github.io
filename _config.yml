@@ -234,7 +234,10 @@ al_folio:
   # (see plan: al_folio_distill only delegates rendering to an opaque tag with
   # its own templates, bypassing our bilingual distill_scripts.liquid). Our
   # vendored transforms.v2.js does load from the remote CDN, so allow_remote_loader
-  # reflects that honestly rather than contradicting it.
+  # reflects that honestly rather than contradicting it. Note: v1.1 hardened
+  # al_folio_distill's own remote-loader SRI and changed ITS default to false for
+  # sites using that gem's renderer - inert here since al_folio_distill isn't
+  # installed at all, so this key is documentation, not a live security setting.
   distill:
     engine: distillpub-template
     source: al-org-dev/distill-template#al-folio
@@ -251,8 +254,14 @@ al_folio:
       # our templates depend on throughout (bib.liquid, header.liquid, footer.liquid,
       # CV includes). Adopting it would require a full Tailwind-native rewrite of
       # those templates - a separate redesign project, out of scope for this migration.
-      # Real Bootstrap/jQuery/MDB stay in head.liquid/scripts.liquid. Supported by
-      # al_folio_core through v1.2, deprecated v1.3, removed v2.0 - revisit before then.
+      # Real Bootstrap/jQuery/MDB stay in head.liquid/scripts.liquid. Re-confirmed at
+      # v1.2: its CSS collision is still unfixed upstream.
+      support_window: v1.0-v1.2
+      deprecates_in: v1.3
+      removed_in: v2.0 # revisit this rejection before then
+  upgrade:
+    channel: stable
+    auto_apply_safe_fixes: false # heavily-overridden fork; never auto-apply
 
 # Sitemap settings
 defaults:

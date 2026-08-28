@@ -28,7 +28,14 @@ group :jekyll_plugins do
     gem 'classifier-reborn'  # used for content categorization during the build
 end
 
-# al-folio v1.x plugins (migration in progress: al_folio_core, al_folio_cv, for now)
+# al-folio v1.x plugins. These 5 are the full intentionally-adopted set, already at
+# the exact versions upstream's v1.2 starter pins (the al_folio_* gem series has never
+# left 1.0.x - "v1.2" is a starter-repo release label, not a gem version line). The rest
+# of v1.2's Gemfile (al_folio_distill, al_folio_bootstrap_compat, al_icons, al_cookie,
+# al_analytics, al_img_tools, al_search, al_charts, al_math, al_comments, al_newsletter,
+# al_email_protect, al_marimo, al_rtl) is deliberately not adopted: al_folio_distill and
+# al_folio_bootstrap_compat were evaluated and rejected (see _config.yml al_folio.compat
+# / al_folio.distill comments); the rest are out of scope for this personal academic site.
 group :al_folio_plugins do
     gem 'al_folio_core', '= 1.0.15'
     gem 'al_folio_cv', '= 1.0.2'
