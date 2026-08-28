@@ -35,6 +35,9 @@ protect_email: true # obfuscates the mailto: link in social.liquid via al_email_
 # repo color theme
 repo_theme_light: default # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 repo_theme_dark: dark # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
+# host serving github-readme-stats; the shared public demo (github-readme-stats.vercel.app)
+# has been down (503 DEPLOYMENT_PAUSED) since Feb 2026, so this points at a self-hosted instance
+repo_stats_host: https://github-readme-stats-nu-ochre-31.vercel.app
 repo_trophies:
   enabled: false
   theme_light: flat # https://github.com/ryo-ma/github-profile-trophy
