@@ -7,7 +7,7 @@ subtitle:
 
 profile:
   align: right
-  image: anime-avatar.png
+  image: anime-profile.jpeg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>计算神经科学家<br>
