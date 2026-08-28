@@ -1,0 +1,122 @@
+{% comment %}
+  Local override of al_folio_core's al_cookie_scripts wrapper. al_cookie's own setup
+  script (lib/templates/cookie_consent_setup.js.liquid in the gem) hardcodes English
+  consent-modal copy with no site-level override hook - the same class of limitation
+  that keeps al_folio_distill unadopted. This keeps the CDN-hosted, SRI-pinned
+  vanilla-cookieconsent library (still configured under third_party_libraries, still
+  loaded from the gem's cookie-theme-sync.js asset) but renders the banner text from
+  strings.yml per site.active_lang, matching how other bilingual UI chrome on this
+  site (search modal placeholder, social links) is localized.
+{% endcomment %}
+{% assign cookie_strings = site.data[site.active_lang].strings.cookie %}
+<script
+  defer
+  src="{{ site.third_party_libraries.vanilla-cookieconsent.url.js }}"
+  integrity="{{ site.third_party_libraries.vanilla-cookieconsent.integrity.js }}"
+  crossorigin="anonymous"
+></script>
+<script defer src="{{ site.baseurl }}/assets/al_cookie/js/cookie-theme-sync.js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  if (typeof window.gtag !== "function") {
+    window.gtag = function () {
+      window.dataLayer.push(arguments);
+    };
+  }
+  var gtag = window.gtag;
+  gtag("consent", "default", {
+    ad_storage: "denied",
+    analytics_storage: "denied",
+    functionality_storage: "denied",
+    personalization_storage: "denied",
+  });
+
+  var cookieConsentRetryCount = 0;
+  var COOKIE_CONSENT_MAX_RETRIES = 50;
+
+  function initializeCookieConsent() {
+    if (!window.CookieConsent) {
+      if (cookieConsentRetryCount++ < COOKIE_CONSENT_MAX_RETRIES) {
+        setTimeout(initializeCookieConsent, 100);
+      } else {
+        console.error("CookieConsent library failed to load");
+      }
+      return;
+    }
+
+    window.CookieConsent.run({
+      categories: {
+        necessary: {
+          enabled: true,
+          readOnly: true,
+        },
+        analytics: {},
+      },
+      language: {
+        default: {{ site.active_lang | jsonify }},
+        translations: {
+          {{ site.active_lang | jsonify }}: {
+            consentModal: {
+              title: {{ cookie_strings.consent_modal.title | jsonify }},
+              description: {{ cookie_strings.consent_modal.description | jsonify }},
+              acceptAllBtn: {{ cookie_strings.consent_modal.accept_all | jsonify }},
+              acceptNecessaryBtn: {{ cookie_strings.consent_modal.reject_all | jsonify }},
+              showPreferencesBtn: {{ cookie_strings.consent_modal.show_preferences | jsonify }}
+            },
+            preferencesModal: {
+              title: {{ cookie_strings.preferences_modal.title | jsonify }},
+              acceptAllBtn: {{ cookie_strings.preferences_modal.accept_all | jsonify }},
+              acceptNecessaryBtn: {{ cookie_strings.preferences_modal.reject_all | jsonify }},
+              savePreferencesBtn: {{ cookie_strings.preferences_modal.save_preferences | jsonify }},
+              closeIconLabel: {{ cookie_strings.preferences_modal.close | jsonify }},
+              sections: [
+                {
+                  title: {{ cookie_strings.preferences_modal.usage_title | jsonify }},
+                  description: {{ cookie_strings.preferences_modal.usage_description | jsonify }}
+                },
+                {
+                  title: {{ cookie_strings.preferences_modal.necessary_title | jsonify }},
+                  description: {{ cookie_strings.preferences_modal.necessary_description | jsonify }},
+                  linkedCategory: "necessary"
+                },
+                {
+                  title: {{ cookie_strings.preferences_modal.analytics_title | jsonify }},
+                  description: {{ cookie_strings.preferences_modal.analytics_description | jsonify }},
+                  linkedCategory: "analytics"
+                },
+                {
+                  title: {{ cookie_strings.preferences_modal.more_info_title | jsonify }},
+                  description: {{ cookie_strings.preferences_modal.more_info_description | jsonify }}
+                }
+              ]
+            }
+          }
+        }
+      },
+      onFirstConsent: function (consentData) {
+        updateConsentMode(consentData);
+      },
+      onChange: function (consentData) {
+        updateConsentMode(consentData);
+      },
+    });
+
+    function updateConsentMode(consentData) {
+      var categories = consentData.categories || consentData;
+
+      if (!categories || typeof categories !== "object") {
+        console.warn("Invalid consent data structure:", consentData);
+        return;
+      }
+
+      gtag("consent", "update", {
+        analytics_storage: categories.analytics ? "granted" : "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+      });
+    }
+  }
+
+  initializeCookieConsent();
+</script>
