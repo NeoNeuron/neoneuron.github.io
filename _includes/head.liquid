@@ -22,8 +22,9 @@
 {% endif %}
 
 <!-- Fonts & Icons -->
-<link defer rel="stylesheet" href="{{ '/assets/css/academicons.min.css' | relative_url | bust_file_cache }}">
-<link defer rel="stylesheet" href="{{ '/assets/css/scholar-icons.css' | relative_url | bust_file_cache }}">
+{% if site.plugins contains 'al_icons' %}
+  {% include plugins/al_icons_styles.liquid %}
+{% endif %}
 <link
   defer
   rel="stylesheet"
@@ -189,4 +190,24 @@
 
 {% if page.tikzjax %}
   <link defer rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+{% endif %}
+
+{% if site.enable_cookie_consent and site.plugins contains 'al_cookie' %}
+  <!-- Cookie Consent -->
+  {% include plugins/al_cookie_styles.liquid %}
+{% endif %}
+
+{% if site.plugins contains 'al_rtl' %}
+  <!-- Right-to-left support (inert: no RTL page.lang/site.lang configured) -->
+  {% include plugins/al_rtl_styles.liquid %}
+{% endif %}
+
+{% if site.protect_email and site.plugins contains 'al_email_protect' %}
+  <!-- Email obfuscation -->
+  {% include plugins/al_email_protect_styles.liquid %}
+{% endif %}
+
+{% if page.marimo and site.plugins contains 'al_marimo' %}
+  <!-- Marimo notebooks -->
+  {% include plugins/al_marimo_styles.liquid %}
 {% endif %}

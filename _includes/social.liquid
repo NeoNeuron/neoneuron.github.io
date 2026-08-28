@@ -11,7 +11,20 @@
     {% when 'discord_id' %}
       <a href="https://discord.com/users/{{ social[1] }}" title="Discord"><i class="fa-brands fa-discord"></i></a>
     {% when 'email' %}
-      <a href="mailto:{{ social[1] | encode_email }}" title="email"><i class="fa-solid fa-envelope"></i></a>
+      {% comment %}
+        al_email_protect_html rewrites the mailto: href into split-and-rejoined data
+        attributes; since this label (a plain icon, no "@") never matches its plaintext-label
+        branch, the visible markup is unchanged - see Gemfile comment above al_folio_plugins.
+        The tooltip lives on a wrapping span rather than the anchor's own title attribute:
+        rewrite_html splices every non-href attribute on the source anchor verbatim into the
+        rewritten anchor's class="..." string, so a title="email" attribute on the <a> itself
+        produces `class="al-email-protect title="email""` - a quote landing mid-attribute
+        that breaks the tag. No such attribute on the <a> means nothing to splice.
+      {% endcomment %}
+      <span title="email">
+        {% capture email_link %}<a href="mailto:{{ social[1] }}"><i class="fa-solid fa-envelope"></i></a>{% endcapture %}
+        {{ email_link | al_email_protect_html }}
+      </span>
     {% when 'facebook_id' %}
       <a href="https://facebook.com/{{ social[1] }}" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
     {% when 'flickr_id' %}

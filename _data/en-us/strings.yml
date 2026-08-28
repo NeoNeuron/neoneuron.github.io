@@ -59,6 +59,27 @@ citation:
   bibtex: "or as a BibTeX entry:"
   introduction: "If you found this useful, please cite this as:"
 contact_note: Email is the surest way to reach me — I will get back to you as soon as I can.
+cookie:
+  consent_modal:
+    title: We use cookies
+    description: This website uses cookies to improve your experience and analyze site traffic. By clicking "Accept all", you consent to our use of cookies.
+    accept_all: Accept all
+    reject_all: Reject all
+    show_preferences: Manage individual preferences
+  preferences_modal:
+    title: Manage cookie preferences
+    accept_all: Accept all
+    reject_all: Reject all
+    save_preferences: Accept current selection
+    close: Close
+    usage_title: Cookie usage
+    usage_description: We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want.
+    necessary_title: Strictly necessary cookies
+    necessary_description: These cookies are essential for the proper functioning of the website. Without these cookies, the website would not work properly.
+    analytics_title: Analytics cookies
+    analytics_description: These cookies allow us to measure traffic and analyze your behavior to improve this site.
+    more_info_title: More information
+    more_info_description: "For any queries about cookies, please contact me."
 cv:
   address: Address
   area: Area

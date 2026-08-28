@@ -23,10 +23,22 @@ GEM
       tzinfo (~> 2.0, >= 2.0.5)
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
+    al_analytics (1.0.2)
+      jekyll (>= 3.9, < 5.0)
+      liquid (>= 4.0, < 6.0)
+    al_charts (1.0.1)
+      jekyll (>= 3.9, < 5.0)
+      liquid (>= 4.0, < 6.0)
     al_citations (1.0.1)
       activesupport (>= 6.0, < 8.0)
       jekyll (>= 3.9, < 5.0)
       nokogiri (>= 1.13, < 2.0)
+    al_cookie (1.0.1)
+      jekyll (>= 3.9, < 5.0)
+      liquid (>= 4.0, < 6.0)
+    al_email_protect (1.0.1)
+      jekyll (>= 3.9, < 5.0)
+      liquid (>= 4.0, < 6.0)
     al_ext_posts (1.0.3)
       feedjira (>= 3.2, < 5.0)
       httparty (>= 0.18, < 1.0)
@@ -40,6 +52,21 @@ GEM
       liquid (>= 4.0, < 6.0)
     al_folio_upgrade (1.0.3)
       al_folio_core (>= 1.0.0)
+      jekyll (>= 3.9, < 5.0)
+      liquid (>= 4.0, < 6.0)
+    al_icons (1.0.0)
+      jekyll (>= 3.9, < 5.0)
+      liquid (>= 4.0, < 6.0)
+    al_marimo (1.0.0)
+      jekyll (>= 3.9, < 5.0)
+      liquid (>= 4.0, < 6.0)
+    al_math (1.0.2)
+      jekyll (>= 3.9, < 5.0)
+      liquid (>= 4.0, < 6.0)
+    al_newsletter (1.0.0)
+      jekyll (>= 3.9, < 5.0)
+      liquid (>= 4.0, < 6.0)
+    al_rtl (1.0.0)
       jekyll (>= 3.9, < 5.0)
       liquid (>= 4.0, < 6.0)
     base64 (0.3.0)
@@ -164,7 +191,6 @@ GEM
       jekyll (>= 3.6, < 5.0)
     jekyll-cache-bust (0.0.1)
       jekyll (>= 3.6, < 5.0)
-    jekyll-email-protect (1.1.0)
     jekyll-feed (0.17.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-get-json (1.0.0)
@@ -314,11 +340,20 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  al_analytics (= 1.0.2)
+  al_charts (= 1.0.1)
   al_citations (= 1.0.1)
+  al_cookie (= 1.0.1)
+  al_email_protect (= 1.0.1)
   al_ext_posts (= 1.0.3)
   al_folio_core (= 1.0.15)
   al_folio_cv (= 1.0.2)
   al_folio_upgrade (= 1.0.3)
+  al_icons (= 1.0.0)
+  al_marimo (= 1.0.0)
+  al_math (= 1.0.2)
+  al_newsletter (= 1.0.0)
+  al_rtl (= 1.0.0)
   classifier-reborn
   css_parser
   feedjira
@@ -327,7 +362,6 @@ DEPENDENCIES
   jekyll-3rd-party-libraries
   jekyll-archives
   jekyll-cache-bust
-  jekyll-email-protect
   jekyll-feed
   jekyll-get-json
   jekyll-imagemagick

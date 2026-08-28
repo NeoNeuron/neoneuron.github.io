@@ -59,6 +59,27 @@ citation:
   bibtex: "或使用 BibTeX 格式："
   introduction: "如果文章对你有帮助，别忘了引用本文："
 contact_note: "留下你的联系方式，我会尽快回复。"
+cookie:
+  consent_modal:
+    title: 本网站使用 Cookie
+    description: 本网站使用 Cookie 以改善您的浏览体验并分析网站流量。点击"全部接受"即表示您同意我们使用 Cookie。
+    accept_all: 全部接受
+    reject_all: 全部拒绝
+    show_preferences: 管理个性化设置
+  preferences_modal:
+    title: 管理 Cookie 偏好设置
+    accept_all: 全部接受
+    reject_all: 全部拒绝
+    save_preferences: 保存当前选择
+    close: 关闭
+    usage_title: Cookie 使用说明
+    usage_description: 我们使用 Cookie 来保证网站的基本功能，并提升您的在线体验。您可以随时为每个类别选择启用或禁用。
+    necessary_title: 必要 Cookie
+    necessary_description: 这些 Cookie 对网站的正常运行至关重要。没有这些 Cookie，网站将无法正常工作。
+    analytics_title: 统计分析 Cookie
+    analytics_description: 这些 Cookie 帮助我们统计访问量并分析您的行为，以改进本网站的服务。
+    more_info_title: 更多信息
+    more_info_description: 如对 Cookie 使用有任何疑问，欢迎与我联系。
 cv:
   address: 地址
   area: 区域

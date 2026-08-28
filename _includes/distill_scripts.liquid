@@ -1,3 +1,12 @@
+{% comment %}
+  This file is a pure local addition (no al_folio_core file of this name exists), so
+  .al-folio-overrides.yml can't track drift on it the way it does head.liquid/scripts.liquid.
+  It includes plugins/al_charts_scripts.liquid, plugins/al_math_scripts.liquid,
+  plugins/al_analytics_scripts.liquid, plugins/al_cookie_scripts.liquid,
+  plugins/al_email_protect_scripts.liquid, and plugins/al_marimo_scripts.liquid below - if a
+  future gem update renames or restructures _includes/plugins/*, head.liquid/scripts.liquid
+  will get flagged by `upgrade overrides audit` but this one won't; check it by hand too.
+{% endcomment %}
 <!-- jQuery -->
 <script
   src="{{ site.third_party_libraries.jquery.url.js }}"
@@ -13,105 +22,9 @@
   crossorigin="anonymous"
 ></script>
 
-{% if page.mermaid and page.mermaid.enabled %}
-  <!-- Mermaid and D3 -->
-  <script
-    defer
-    src="{{ site.third_party_libraries.mermaid.url.js }}"
-    integrity="{{ site.third_party_libraries.mermaid.integrity.js }}"
-    crossorigin="anonymous"
-  ></script>
-  {% if page.mermaid.zoomable %}
-    <script
-      defer
-      src="{{ site.third_party_libraries.d3.url.js }}"
-      integrity="{{ site.third_party_libraries.d3.integrity.js }}"
-      crossorigin="anonymous"
-    ></script>
-  {% endif %}
-  <script defer src="{{ '/assets/js/mermaid-setup.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
-{% endif %}
-
-{% if page.code_diff %}
-  <!-- Diff2HTML -->
-  <!-- diff2html doesn't go well with Bootstrap Table -->
-  <script
-    src="{{ site.third_party_libraries.diff2html.url.js }}"
-    integrity="{{ site.third_party_libraries.diff2html.integrity.js }}"
-    crossorigin="anonymous"
-  ></script>
-  <script defer src="{{ '/assets/js/diff2html-setup.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
-{% endif %}
-
-{% if page.map %}
-  <!-- Leaflet -->
-  <script
-    src="{{ site.third_party_libraries.leaflet.url.js }}"
-    integrity="{{ site.third_party_libraries.leaflet.integrity.js }}"
-    crossorigin="anonymous"
-  ></script>
-  <script defer src="{{ '/assets/js/leaflet-setup.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
-{% endif %}
-
-{% if page.chart and page.chart.chartjs %}
-  <!-- Chart.js -->
-  <script
-    defer
-    src="{{ site.third_party_libraries.chartjs.url.js }}"
-    integrity="{{ site.third_party_libraries.chartjs.integrity.js }}"
-    crossorigin="anonymous"
-  ></script>
-  <script defer src="{{ '/assets/js/chartjs-setup.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
-{% endif %}
-
-{% if page.chart and page.chart.echarts %}
-  <!-- ECharts -->
-  <script
-    src="{{ site.third_party_libraries.echarts.url.js.library }}"
-    integrity="{{ site.third_party_libraries.echarts.integrity.js.library }}"
-    crossorigin="anonymous"
-  ></script>
-  {% if site.enable_darkmode %}
-    <script
-      src="{{ site.third_party_libraries.echarts.url.js.dark_theme }}"
-      integrity="{{ site.third_party_libraries.echarts.integrity.js.dark_theme }}"
-      crossorigin="anonymous"
-    ></script>
-  {% endif %}
-  <script defer src="{{ '/assets/js/echarts-setup.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
-{% endif %}
-
-{% if page.chart and page.chart.vega_lite %}
-  <!-- Vega -->
-  <script
-    defer
-    src="{{ site.third_party_libraries.vega.url.js }}"
-    integrity="{{ site.third_party_libraries.vega.integrity.js }}"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    defer
-    src="{{ site.third_party_libraries.vega-lite.url.js }}"
-    integrity="{{ site.third_party_libraries.vega-lite.integrity.js }}"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    defer
-    src="{{ site.third_party_libraries.vega-embed.url.js }}"
-    integrity="{{ site.third_party_libraries.vega-embed.integrity.js }}"
-    crossorigin="anonymous"
-  ></script>
-  <script defer src="{{ '/assets/js/vega-setup.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
-{% endif %}
-
-{% if page.tikzjax %}
-  <!-- Tikzjax -->
-  <script
-    defer
-    src="https://tikzjax.com/v1/tikzjax.js"
-    integrity="sha256-+1qyucCXRZJrCg3lm3KxRt/7WXaYhBid4/1XJRHGB1E="
-    crossorigin="anonymous"
-  ></script>
+{% if site.plugins contains 'al_charts' %}
+  <!-- Charts and Diagrams -->
+  {% include plugins/al_charts_scripts.liquid %}
 {% endif %}
 
 {% if page.typograms %}
@@ -161,48 +74,28 @@
 
 <!-- Removed Badges -->
 
-{% if site.enable_math %}
-  <!-- MathJax -->
-  <script
-    defer
-    type="text/javascript"
-    id="MathJax-script"
-    src="{{ site.third_party_libraries.mathjax.url.js }}"
-    integrity="{{ site.third_party_libraries.mathjax.integrity.js }}"
-    crossorigin="anonymous"
-  ></script>
-  <script src="{{ '/assets/js/mathjax-setup.js' | relative_url | bust_file_cache }}"></script>
-  <script
-    defer
-    src="{{ site.third_party_libraries.polyfill.url.js }}"
-    crossorigin="anonymous"
-  ></script>
-  <!-- Removed Pseudocode -->
+{% if site.plugins contains 'al_math' %}
+  {% include plugins/al_math_scripts.liquid %}
 {% endif %}
 
-{% if site.enable_google_analytics %}
+{% if site.plugins contains 'al_analytics' %}
   <!-- Analytics -->
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-  <script defer src="{{ '/assets/js/google-analytics-setup.js' | relative_url | bust_file_cache }}"></script>
+  {% include plugins/al_analytics_scripts.liquid %}
 {% endif %}
 
-{% if site.enable_cronitor_analytics %}
-  <!-- Cronitor RUM -->
-  <script async src="https://rum.cronitor.io/script.js"></script>
-  <script defer src="{{ '/assets/js/cronitor-analytics-setup.js' | relative_url | bust_file_cache }}"></script>
+{% if site.enable_cookie_consent and site.plugins contains 'al_cookie' %}
+  <!-- Cookie Consent -->
+  {% include plugins/al_cookie_scripts.liquid %}
 {% endif %}
-{% if site.enable_pirsch_analytics %}
-  <script
-    defer
-    src="https://api.pirsch.io/pa.js"
-    id="pianjs"
-    data-code="{{ site.pirsch_analytics }}"
-  ></script>
+
+{% if site.protect_email and site.plugins contains 'al_email_protect' %}
+  <!-- Email obfuscation -->
+  {% include plugins/al_email_protect_scripts.liquid %}
 {% endif %}
-{% if site.enable_openpanel_analytics %}
-  <script defer src="{{ '/assets/js/open-panel-analytics-setup.js' | relative_url | bust_file_cache }}"></script>
-  <script async defer src="https://openpanel.dev/op1.js"></script>
+
+{% if page.marimo and site.plugins contains 'al_marimo' %}
+  <!-- Marimo notebooks -->
+  {% include plugins/al_marimo_scripts.liquid %}
 {% endif %}
 
 {% if site.enable_progressbar %}
