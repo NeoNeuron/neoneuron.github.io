@@ -2,10 +2,10 @@
   "basics": {
     "name": "Kai Chen",
     "label": "Computational Neuroscientist | Ph.D in Mathematics",
-    "image": "/assets/img/anime-avatar.jpg",
+    "image": "/assets/img/anime-avatar.png",
     "email": "",
     "phone": "",
-    "url": "https://neoneuron.github.io/",
+    "url": "https://kchen513.top/",
     "summary": "",
     "location": {
       "address": "29 rue d'Ulm",
@@ -88,7 +88,7 @@
       "title": "Best Poster Award",
       "date": "2021-07",
       "awarder": "The 3rd Chinese Computational and Cognitive Neuroscience Conference",
-      "url": "https://shibs.cn/index.php/news/showNews/nid/308.shtml"
+      "url": ""
     },
     {
       "title": "Outstanding Graduate Student",

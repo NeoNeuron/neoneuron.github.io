@@ -1,9 +1,20 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+# keyed by the `abbr` field of entries in _bibliography/papers.bib
+"PNAS":
+  url: https://www.pnas.org/
+  color: "#0c2e5c"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"Neural Netw.":
+  url: https://www.sciencedirect.com/journal/neural-networks
+  color: "#e9711c"
 
-"Vision":
-  color: "#009f36"
+"CSIAM-LS":
+  url: https://global-sci.com/csiam-ls
+  color: "#00769e"
+
+"arXiv":
+  url: https://arxiv.org/
+  color: "#b31b1b"
+
+"bioRxiv":
+  url: https://www.biorxiv.org/
+  color: "#bd2736"

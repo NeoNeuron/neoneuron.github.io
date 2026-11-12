@@ -1,11 +1,12 @@
-"Li":
+# keys must be lowercase: _layouts/bib.liquid looks coauthors up by downcased last name
+"li":
   - firstname: ["Songting", "S."]
     url: https://ins.sjtu.edu.cn/people/songtingli/
 
-"Zhou":
+"zhou":
   - firstname: ["Douglas", "D."]
-    url: https://ins.sjtu.edu.cn/people/zdz/ 
+    url: https://ins.sjtu.edu.cn/people/zdz/
 
-"Tian":
+"tian":
   - firstname: ["Zhong-qi K.", "Zhong-qi Kyle", "Z. K.", "Zhong-qi", "Z."]
-    url: https://lcns-sjtu.github.io/people/zhongqi_tian/ 
+    url: https://lcns-sjtu.github.io/people/zhongqi_tian/

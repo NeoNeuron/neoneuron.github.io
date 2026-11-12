@@ -138,7 +138,9 @@ ninja.data = [
         {%- when "email" -%}
           {%- assign social_id = "social-email" -%}
           {%- assign social_title = site.data[site.active_lang].strings.search.email -%}
-          {%- capture social_url %}"mailto:{{ social[1] | encode_email }}"{% endcapture -%}
+          {%- comment -%} keep the address out of the generated file as plain text (site.protect_email) {%- endcomment -%}
+          {%- assign email_parts = social[1] | split: "@" -%}
+          {%- capture social_url %}"mailto:" + [{{ email_parts[0] | jsonify }}, {{ email_parts[1] | jsonify }}].join("@"){% endcapture -%}
         {%- when "facebook_id" -%}
           {%- assign social_id = "social-facebook" -%}
           {%- assign social_title = "Facebook" -%}

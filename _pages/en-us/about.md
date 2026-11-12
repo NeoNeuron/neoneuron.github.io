@@ -53,9 +53,9 @@ Earlier still, I studied physics at the School of Physics and Astronomy, Shangha
 - Neural coding and data analysis.
   1. Linking **structural**, **functional**, and **effective connectivity** using multi-modal neural data.
   2. The principle underlying **spike temporal coding**
-- Temporal proception in the brain (my current ERC project CHRONOLOGY).
+- Temporal perception in the brain (my current ERC project CHRONOLOGY).
   1. How the cortical network represent varying **time durations** in terms of population dynamics.
   2. How the neural dynamics bind independent memory items sequentially onto the neural manifold in the **temporal order**.
-  3. Can we parametrically manipulate the network dynamics to systemetically perturb the **temporal perception** and change the **working memory** capacity?
+  3. Can we parametrically manipulate the network dynamics to systematically perturb the **temporal perception** and change the **working memory** capacity?
 
 ---

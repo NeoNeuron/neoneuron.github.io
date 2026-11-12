@@ -6,8 +6,6 @@ categories: poster
 tags: causality, correlation, mutual-information, Granger-causality, transfer-entropy, neural-networks
 ---
 
-> 详情链接：[🔗](http://ins.sjtu.edu.cn:3300/conferences/50/)
-
 #### Nonlinear pulse-coupled network reconstruction using pairwise time-delayed transfer entropy
 
 Kai Chen, Zhong-qi K. Tian, Wei P. Dai, Songting Li, David W. McLaughlin, Douglas Zhou

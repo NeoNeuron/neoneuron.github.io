@@ -12,8 +12,6 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Kai
 middle_name:
 last_name: Chen 陈开
-contact_note: >
-  Feel free to reach through EMAIL
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Personal website of Kai Chen. Here, you may find his ideas about
   life, research, and technical stuffs. ENJOY the life!
@@ -168,25 +166,16 @@ exclude:
   - al-folio-upgrade-report.md
   - bin/
   - CLAUDE.md
-  - CONTRIBUTING.md
-  - CUSTOMIZE.md
   - Dockerfile
   - docker-compose.yml
-  - docker-compose-slim.yml
-  - FAQ.md
   - Gemfile
   - Gemfile.lock
-  - INSTALL.md
   - LICENSE
-  - lighthouse_results/
   - package.json
   - package-lock.json
-  - _pages/en-us/about_einstein.md
-  - _pages/pt-br/about_einstein.md
   - purgecss.config.js
   - README.md
-  - readme_preview/
-  - UPGRADING.md
+  - requirements.txt
   - vendor
 keep_files:
   - CNAME

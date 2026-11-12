@@ -1,2 +1,5 @@
 linkedin.com
 reddit.com
+# reachable in a browser, but reject automated clients
+cns.org.cn/upload
+doi.org/10.1073

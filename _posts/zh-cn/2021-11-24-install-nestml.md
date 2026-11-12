@@ -11,7 +11,7 @@ giscus_comments: true
 
 ### 安装最新版本的`cmake` (需要`sudo`权限)
 
-*参考资料: [https://graspingtech.com/upgrade-cmake/](https://graspingtech.com/upgrade-cmake/)*
+*参考资料: [https://graspingtech.com/upgrade-cmake/](https://web.archive.org/web/20250321051408/https://graspingtech.com/upgrade-cmake/)*
 
 ```bash
 sudo apt install build-essential libssl-dev
@@ -25,7 +25,7 @@ sudo make install
 
 ### 安装`NEST`-`v3.1`
 
-*参考资料: [https://nest-simulator.readthedocs.io/en/stable/installation/linux_install.html](https://nest-simulator.readthedocs.io/en/stable/installation/linux_install.html)*
+*参考资料: [https://nest-simulator.readthedocs.io/en/stable/installation/index.html](https://nest-simulator.readthedocs.io/en/stable/installation/index.html)*
 
 **警告**: 通过`pip`或`conda`直接安装NEST v2.20.1 可能会产生该[报错问题](https://github.com/nest/nestml/issues/670)。
 
@@ -86,7 +86,7 @@ sudo make install
 
 ### 安装最新的`NEST::ml`开发版本
 
-*参考资料: [https://nestml.readthedocs.io/en/latest/installation.html](https://nest-simulator.readthedocs.io/en/stable/installation/linux_install.html)*
+*参考资料: [https://nestml.readthedocs.io/en/latest/installation.html](https://nestml.readthedocs.io/en/latest/installation.html)*
 
 从GitHub下载最新的开发版本。
 
@@ -115,7 +115,7 @@ python setup.py test
 
 ### 安装测试`*.nestml`模块
 
-*参考资料: [https://nestml.readthedocs.io/en/latest/tutorials/izhikevich/nestml_izhikevich_tutorial.html](https://nest-simulator.readthedocs.io/en/stable/installation/linux_install.html)*
+*参考资料: [https://nestml.readthedocs.io/en/latest/tutorials/izhikevich/nestml_izhikevich_tutorial.html](https://nestml.readthedocs.io/en/latest/tutorials/izhikevich/nestml_izhikevich_tutorial.html)*
 
 ```python
 import nest

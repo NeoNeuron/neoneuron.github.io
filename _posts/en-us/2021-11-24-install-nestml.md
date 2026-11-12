@@ -11,7 +11,7 @@ giscus_comments: true
 
 ### Install latest version of `cmake` (need `sudo` authorization)
 
-*Reference: [https://graspingtech.com/upgrade-cmake/](https://graspingtech.com/upgrade-cmake/)*
+*Reference: [https://graspingtech.com/upgrade-cmake/](https://web.archive.org/web/20250321051408/https://graspingtech.com/upgrade-cmake/)*
 
 ```bash
 sudo apt install build-essential libssl-dev
@@ -25,7 +25,7 @@ sudo make install
 
 ### Install `NEST` `v3.1`
 
-*Reference: [https://nest-simulator.readthedocs.io/en/stable/installation/linux_install.html](https://nest-simulator.readthedocs.io/en/stable/installation/linux_install.html)*
+*Reference: [https://nest-simulator.readthedocs.io/en/stable/installation/index.html](https://nest-simulator.readthedocs.io/en/stable/installation/index.html)*
 
 **WARNING**: Directly install NEST v2.20.1 from `pip` or `conda` might leads to [this issue](https://github.com/nest/nestml/issues/670).
 
@@ -78,7 +78,7 @@ If there is no failure occurs in installcheck, then NEST should now be successfu
 
 ### Install the latest development version of `NEST::ml`
 
-*Reference: [https://nestml.readthedocs.io/en/latest/installation.html](https://nest-simulator.readthedocs.io/en/stable/installation/linux_install.html)*
+*Reference: [https://nestml.readthedocs.io/en/latest/installation.html](https://nestml.readthedocs.io/en/latest/installation.html)*
 
 To obtain the latest development version, clone directly from the master branch of the GitHub repository:
 ```bash
@@ -102,7 +102,7 @@ python setup.py test
 
 ### Install example `*.nestml` file
 
-*Reference: [https://nestml.readthedocs.io/en/latest/tutorials/izhikevich/nestml_izhikevich_tutorial.html](https://nest-simulator.readthedocs.io/en/stable/installation/linux_install.html)*
+*Reference: [https://nestml.readthedocs.io/en/latest/tutorials/izhikevich/nestml_izhikevich_tutorial.html](https://nestml.readthedocs.io/en/latest/tutorials/izhikevich/nestml_izhikevich_tutorial.html)*
 
 ```python
 import nest
