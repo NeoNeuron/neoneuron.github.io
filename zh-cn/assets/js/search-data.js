@@ -250,7 +250,7 @@ ninja.data = [{
         title: '发邮件',
         section: '社交',
         handler: () => {
-          window.open("mailto:kchen513@outlook.com", "_blank");
+          window.open("mailto:" + ["kchen513", "outlook.com"].join("@"), "_blank");
         },
       },{
         id: 'social-github',
