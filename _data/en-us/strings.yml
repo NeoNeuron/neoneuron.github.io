@@ -180,4 +180,7 @@ search:
     description: Change the theme of the site to System Default
     title: Use system default theme
   theme: Theme
+pull_cord:
+  hint: Pull the cord to switch the lights
+  label: Light mode
 site_description: Personal website of Kai Chen, a computational neuroscientist studying network dynamics, neural coding, and the computations behind perception and cognition.

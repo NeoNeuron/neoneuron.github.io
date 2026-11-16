@@ -181,4 +181,7 @@ search:
     description: 切换系统主题模式
     title: 切换系统主题模式
   theme: 主题
+pull_cord:
+  hint: 拉一下灯绳，开灯或关灯
+  label: 浅色模式
 site_description: 陈开的个人主页。计算神经科学研究者，关注网络动力学、神经编码，以及感知与认知背后的计算机制。

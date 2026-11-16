@@ -1,0 +1,33 @@
+{% if site.enable_darkmode %}
+  <!-- Pull cord: a hanging lamp whose cord switches the light and dark theme (assets/js/pull-cord.js) -->
+  {% assign pull_cord_rooms = 'is-dark,is-light' | split: ',' %}
+  <div class="pull-cord" id="pull-cord">
+    {% for pull_cord_room in pull_cord_rooms %}
+      <div class="pull-cord-room {{ pull_cord_room }}" aria-hidden="true">
+        <svg class="pull-cord-line pull-cord-wire">
+          <path />
+        </svg>
+        <div class="pull-cord-lamp">
+          <div class="pull-cord-head">
+            <span class="pull-cord-bulb"></span>
+            <span class="pull-cord-shade"></span>
+            <span class="pull-cord-cap"></span>
+          </div>
+        </div>
+        <svg class="pull-cord-line pull-cord-rope">
+          <path />
+        </svg>
+        <span class="pull-cord-bead"></span>
+      </div>
+    {% endfor %}
+    <button
+      class="pull-cord-grab"
+      type="button"
+      role="switch"
+      aria-checked="false"
+      aria-label="{{ site.data[site.active_lang].strings.pull_cord.label }}"
+      title="{{ site.data[site.active_lang].strings.pull_cord.hint }}"
+    ></button>
+  </div>
+  <script defer src="{{ '/assets/js/pull-cord.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}

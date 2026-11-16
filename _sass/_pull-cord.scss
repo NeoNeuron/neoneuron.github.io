@@ -1,0 +1,229 @@
+/*******************************************************************************
+ * Pull cord: a lamp hanging under the navbar whose cord switches the theme.
+ * The lamp is drawn twice, once per theme; the light copy is cut to a circle
+ * that grows out of the bulb. Motion lives in assets/js/pull-cord.js.
+ ******************************************************************************/
+
+@use "sass:color";
+
+.pull-cord {
+  --pull-cord-scale: 0.5; // size of the whole lamp; 1 is the original size
+
+  position: fixed;
+  top: 57px; // just under the fixed navbar and its border
+  right: 0;
+  width: 150px;
+  height: 330px;
+  z-index: 1029; // one below the navbar, so its menus open over the lamp
+  pointer-events: none; // only the bead can be touched; the page under the lamp stays usable
+  visibility: hidden; // shown by the script once the lamp is in place
+  transform: scale(var(--pull-cord-scale));
+  transform-origin: 100% 0;
+  user-select: none;
+  -webkit-user-select: none;
+  view-transition-name: pull-cord;
+
+  &.is-ready {
+    visibility: visible;
+  }
+
+  // The page content is 1000px wide; the lamp hangs in the margin beside it.
+  // Below 1200px there is no margin left and the lamp would cover the text,
+  // so the navbar button does the job alone.
+  @media (max-width: 1199.98px) {
+    display: none;
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+// Both themes at once, so these use the Sass colors and not the --global-* ones.
+.pull-cord-room {
+  position: absolute;
+  inset: 0;
+
+  &.is-dark {
+    --pull-cord-shade-color: #{color.adjust($grey-color-dark, $lightness: 10%)};
+    --pull-cord-bulb-color: #{rgba($white-color, 0.14)};
+    --pull-cord-bead-color: #{$grey-color-light};
+  }
+
+  &.is-light {
+    --pull-cord-shade-color: #{color.adjust($grey-color-light, $lightness: -6%)};
+    --pull-cord-bulb-color: #{$yellow-color};
+    --pull-cord-bead-color: #{$black-color};
+
+    will-change: clip-path;
+  }
+}
+
+.pull-cord-lamp {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+.pull-cord-head {
+  position: absolute;
+  left: 0;
+  top: 0;
+  will-change: transform;
+}
+
+.pull-cord-cap {
+  position: absolute;
+  left: -9px;
+  top: -10px;
+  width: 18px;
+  height: 14px;
+  border-radius: 5px 5px 0 0;
+  background: $grey-color;
+}
+
+.pull-cord-shade {
+  position: absolute;
+  left: -62px;
+  top: 0;
+  width: 124px;
+  height: 66px;
+  border-radius: 62px 62px 12px 12px / 58px 58px 12px 12px;
+  background: var(--pull-cord-shade-color);
+}
+
+.pull-cord-bulb {
+  position: absolute;
+  left: -19px;
+  top: 44px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--pull-cord-bulb-color);
+  will-change: transform;
+}
+
+.pull-cord-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+
+  path {
+    fill: none;
+    stroke: $grey-color;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.pull-cord-bead {
+  position: absolute;
+  left: -8px;
+  top: -3px;
+  width: 16px;
+  height: 30px;
+  border-radius: 999px;
+  background: var(--pull-cord-bead-color);
+  transform-origin: 8px 3px;
+  will-change: transform;
+}
+
+// The one real control: it sits on the bead and follows it.
+.pull-cord-grab {
+  position: absolute;
+  left: -22px;
+  top: -12px;
+  width: 44px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  border-radius: 0.25rem;
+  background: transparent;
+  cursor: grab;
+  pointer-events: auto;
+  touch-action: none;
+  will-change: transform;
+  -webkit-tap-highlight-color: transparent;
+
+  &.is-held {
+    cursor: grabbing;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--global-theme-color);
+    outline-offset: 0;
+  }
+}
+
+// The site fades every property for 750ms on a theme change; the lamp is moved
+// frame by frame, so it must not take part.
+html.transition .pull-cord,
+html.transition .pull-cord * {
+  transition: none !important;
+}
+
+// A pull floods the new theme over the whole page as a circle from the bulb.
+// The script holds the transition open and writes the circle every frame.
+@keyframes pull-cord-hold {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+html.pull-cord-to-light,
+html.pull-cord-to-dark {
+  &::view-transition {
+    pointer-events: none;
+  }
+
+  &::view-transition-group(root) {
+    animation: pull-cord-hold 30s linear;
+  }
+
+  &::view-transition-old(root),
+  &::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  // The lamp stays live on top of the page while the light moves.
+  &::view-transition-group(pull-cord) {
+    animation: none;
+  }
+
+  &::view-transition-old(pull-cord) {
+    display: none;
+  }
+
+  &::view-transition-new(pull-cord) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+}
+
+// Light on: the new, light page opens from the bulb over the dark one.
+html.pull-cord-to-light::view-transition-new(root) {
+  clip-path: var(--pull-cord-clip);
+}
+
+// Light off: the old, light page closes back into the bulb over the dark one.
+html.pull-cord-to-dark::view-transition-old(root) {
+  z-index: 1;
+  clip-path: var(--pull-cord-clip);
+}
