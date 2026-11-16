@@ -18,7 +18,7 @@ npx prettier --write <files>        # format .liquid/.md/.yml/etc. per .prettier
 npx prettier . --check              # exactly what CI enforces
 ```
 
-Ruby is pinned to 3.2.7 locally (`.ruby-version`); the deploy workflow uses 3.3.5. Build with a UTF-8 locale (`LANG=en_US.UTF-8`): under a bare `C`/unset locale `al_folio_core`'s startup scan can crash with `invalid byte sequence in US-ASCII` on the Chinese content. `imagemagick.enabled: true` in `_config.yml` means builds shell out to `convert` for responsive WebP variants — ImageMagick must be on `PATH` or image processing fails.
+Ruby is pinned to 3.2.7 locally (`.ruby-version`); the deploy workflow uses the latest 3.3.x (`ruby-version: "3.3"`; GitHub runners only carry the newest patch release, so an exact pin like 3.3.5 stops installing). Build with a UTF-8 locale (`LANG=en_US.UTF-8`): under a bare `C`/unset locale `al_folio_core`'s startup scan can crash with `invalid byte sequence in US-ASCII` on the Chinese content. `imagemagick.enabled: true` in `_config.yml` means builds shell out to `convert` for responsive WebP variants — ImageMagick must be on `PATH` or image processing fails.
 
 There is no test suite. Two independent CI checks run on push/PR to `main`:
 
