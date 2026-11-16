@@ -181,6 +181,9 @@ search:
     description: 切换系统主题模式
     title: 切换系统主题模式
   theme: 主题
+command_palette:
+  empty: 没有匹配的结果
+  label: 搜索本站
 pull_cord:
   hint: 拉一下灯绳，开灯或关灯
   label: 浅色模式

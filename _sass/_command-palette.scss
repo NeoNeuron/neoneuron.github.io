@@ -1,0 +1,167 @@
+/*******************************************************************************
+ * Command palette: the site search. It springs open from the navbar search
+ * button into a panel; results slide to their places as you type and the
+ * highlight glides to the current row. Motion lives in assets/js/command-palette.js.
+ ******************************************************************************/
+
+$cmdk-row-radius: 0.25rem; // the site's corner radius
+$cmdk-panel-padding: 6px;
+$cmdk-panel-radius: calc(#{$cmdk-row-radius} + #{$cmdk-panel-padding}); // outer radius = inner radius + the padding between them
+
+.cmdk {
+  --cmdk-fill: color-mix(in srgb, var(--global-text-color) 8%, transparent);
+
+  position: fixed;
+  z-index: 1040; // above the navbar and the lamp
+  overflow: hidden;
+  border-radius: $cmdk-panel-radius;
+  color: var(--global-text-color);
+  pointer-events: none;
+
+  &.is-open {
+    pointer-events: auto;
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+// The panel surface. It fades in over the navbar button the panel grows out of.
+.cmdk-chrome {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--global-divider-color);
+  border-radius: inherit;
+  background: var(--global-bg-color);
+  will-change: opacity;
+}
+
+.cmdk-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(520px, calc(100vw - 32px));
+  height: 100%;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.cmdk-query {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 52px;
+  padding: 0 16px;
+  color: var(--global-text-color-light);
+
+  .ti {
+    flex: none;
+    font-size: 18px;
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: none;
+    color: var(--global-text-color);
+    font: inherit;
+    font-size: 1rem;
+
+    &::placeholder {
+      color: var(--global-text-color-light);
+    }
+  }
+}
+
+.cmdk-scroll {
+  position: absolute;
+  top: 52px;
+  right: 0;
+  bottom: $cmdk-panel-padding;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.cmdk-results {
+  position: relative;
+  overflow: hidden; // rows that dropped out must not leave anything to scroll to
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cmdk-row {
+  position: absolute;
+  top: 0;
+  right: $cmdk-panel-padding;
+  left: $cmdk-panel-padding;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  height: 38px;
+  padding: 0 12px;
+  border-radius: $cmdk-row-radius;
+  font-size: 0.9rem;
+  cursor: pointer;
+  will-change: transform, opacity;
+
+  &.is-current {
+    color: var(--global-theme-color);
+  }
+}
+
+.cmdk-title {
+  overflow: hidden;
+  min-width: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// which part of the site a result belongs to
+.cmdk-tag {
+  flex: none;
+  padding: 2px 6px;
+  border-radius: $cmdk-row-radius;
+  background: var(--cmdk-fill);
+  color: var(--global-text-color-light);
+  font-size: 0.7rem;
+}
+
+.cmdk-highlight {
+  position: absolute;
+  top: 0;
+  right: $cmdk-panel-padding;
+  left: $cmdk-panel-padding;
+  height: 38px;
+  border-radius: $cmdk-row-radius;
+  background: var(--cmdk-fill);
+  will-change: transform, opacity;
+}
+
+.cmdk-empty {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  margin: 0;
+  padding: 0 18px;
+  color: var(--global-text-color-light);
+  font-size: 0.9rem;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+// The site fades every property for 750ms on a theme change; the palette is
+// moved frame by frame, so it must not take part.
+html.transition .cmdk,
+html.transition .cmdk * {
+  transition: none !important;
+}

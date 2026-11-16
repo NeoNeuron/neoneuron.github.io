@@ -180,6 +180,9 @@ search:
     description: Change the theme of the site to System Default
     title: Use system default theme
   theme: Theme
+command_palette:
+  empty: Nothing matches that search
+  label: Search this site
 pull_cord:
   hint: Pull the cord to switch the lights
   label: Light mode
