@@ -67,7 +67,11 @@
 {% elsif site.icon != blank %}
   <link rel="shortcut icon" href="{{ site.icon | prepend: '/assets/img/' | relative_url | bust_file_cache}}">
 {% endif %}
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url | bust_css_cache }}">
+{% comment %}
+  bust_css_cache hashes assets/_sass/, which does not exist here (styles live in _sass/), so its version never changed and
+  browsers kept serving an old main.css. The build time changes on every deploy.
+{% endcomment %}
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
 <!-- Keep the scroll position when switching language -->
