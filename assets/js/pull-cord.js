@@ -130,12 +130,30 @@
     root.classList.remove("pull-cord-to-light", "pull-cord-to-dark");
     root.style.removeProperty("--pull-cord-clip");
   };
+  // The light: a circle from the bulb, big enough to pass the far corner of the window.
+  // Returns the bulb in lamp coordinates, the radius and the bulb in window coordinates.
+  const lightCircle = () => {
+    const [bx, by] = bulbAt();
+    const vx = originX + bx * scale;
+    const vy = originY + by * scale;
+    const far = Math.hypot(Math.max(vx, root.clientWidth - vx), Math.max(vy, window.innerHeight - vy)) + 24;
+    const r = Math.max(0, R.x) * far;
+    return [bx, by, r, vx, vy];
+  };
+  // The page transition clips the page to the same circle.
+  const setPageClip = () => {
+    const [, , r, vx, vy] = lightCircle();
+    root.style.setProperty("--pull-cord-clip", `circle(${r.toFixed(1)}px at ${vx.toFixed(1)}px ${vy.toFixed(1)}px)`);
+  };
   // Switch the site theme, letting the light open from (or close into) the bulb.
   const flood = (light) => {
     if (reduce || typeof document.startViewTransition !== "function") {
       setSiteTheme(light);
       return;
     }
+    // Chrome can paint the transition before the next animation frame; without
+    // the circle already set, the whole new page would flash for that one frame.
+    setPageClip();
     root.classList.toggle("pull-cord-to-light", light);
     root.classList.toggle("pull-cord-to-dark", !light);
     const transition = document.startViewTransition(() => {
@@ -342,15 +360,11 @@
     grab.style.transform = beadAt;
 
     // light: a circle from the bulb, big enough to pass the far corner of the window
-    const [bx, by] = bulbAt();
-    const vx = originX + bx * scale;
-    const vy = originY + by * scale;
-    const far = Math.hypot(Math.max(vx, root.clientWidth - vx), Math.max(vy, window.innerHeight - vy)) + 24;
-    const r = Math.max(0, R.x) * far;
+    const [bx, by, r] = lightCircle();
     lit.style.visibility = r < 4 ? "hidden" : "visible";
     lit.style.clipPath = `circle(${(r / scale).toFixed(1)}px at ${bx.toFixed(1)}px ${by.toFixed(1)}px)`;
     if (flooding) {
-      root.style.setProperty("--pull-cord-clip", `circle(${r.toFixed(1)}px at ${vx.toFixed(1)}px ${vy.toFixed(1)}px)`);
+      setPageClip();
     }
   };
 
