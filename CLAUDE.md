@@ -15,15 +15,13 @@ bundle exec jekyll build            # one-off production build into _site/ (same
 docker-compose up                   # alternative dev server via Docker (no local Ruby needed)
 npm install                         # install Prettier + the liquid plugin (needed before any prettier command)
 npx prettier --write <files>        # format .liquid/.md/.yml/etc. per .prettierrc (printWidth 150)
-npx prettier . --check              # exactly what CI enforces
 ```
 
-Ruby is pinned to 3.2.7 locally (`.ruby-version`); the deploy workflow uses the latest 3.3.x (`ruby-version: "3.3"`; GitHub runners only carry the newest patch release, so an exact pin like 3.3.5 stops installing). Build with a UTF-8 locale (`LANG=en_US.UTF-8`): under a bare `C`/unset locale `al_folio_core`'s startup scan can crash with `invalid byte sequence in US-ASCII` on the Chinese content. `imagemagick.enabled: true` in `_config.yml` means builds shell out to `convert` for responsive WebP variants — ImageMagick must be on `PATH` or image processing fails.
+Ruby is pinned to 3.3.13 locally via rbenv (`.ruby-version`); the deploy workflow uses the latest 3.3.x (`ruby-version: "3.3"`; GitHub runners only carry the newest patch release, so an exact pin like 3.3.5 stops installing). Build with a UTF-8 locale (`LANG=en_US.UTF-8`): under a bare `C`/unset locale `al_folio_core`'s startup scan can crash with `invalid byte sequence in US-ASCII` on the Chinese content. `imagemagick.enabled: true` in `_config.yml` means builds shell out to `convert` for responsive WebP variants — ImageMagick must be on `PATH` or image processing fails.
 
-There is no test suite. Two independent CI checks run on push/PR to `main`:
+There is no test suite. CI is a single workflow, `.github/workflows/deploy.yml`: on push to `main` (path-filtered) it builds the site (broken Liquid or bad front matter fails here), runs purgecss, and deploys `_site/` to `gh-pages`. Prettier, lychee, CodeQL and axe workflows were removed because they were permanently red or unused.
 
-- `deploy.yml` — builds the site (broken Liquid or bad front matter fails here) and, on push, deploys `_site/` to `gh-pages`.
-- `prettier.yml` — runs `npx prettier . --check`. This is a _separate_ red X from build failures, and **it is already failing on `main`**: ~40 tracked files (most `_news/*`, `_posts/*`, several `_layouts/*`, vendored `_sass/flag-icons/*`) do not conform. Do **not** run `npx prettier --write .` to fix it — that rewrites the whole tree and buries your change in an unrelated diff. Format only the files you touched.
+Prettier is a local-only convenience now. ~40 tracked files (most `_news/*`, `_posts/*`, several `_layouts/*`, vendored `_sass/flag-icons/*`) do not conform, so do **not** run `npx prettier --write .` — that rewrites the whole tree and buries your change in an unrelated diff. Format only the files you touched.
 
 Do not run `bin/deploy` manually — it force-pushes a built `gh-pages` branch and is the legacy path superseded by `deploy.yml`.
 
@@ -31,8 +29,6 @@ Two build-time behaviors differ from local `jekyll serve`:
 
 - The deploy job runs **purgecss** (`purgecss.config.js`) over `_site/assets/css/` after the production build. CSS classes that only appear in JS-generated markup can survive locally but get stripped in production.
 - The `al_citations` gem fetches Google Scholar / InspireHEP citation counts over the network at build time for entries that set `google_scholar_id` / `inspirehep_id` (none do today).
-
-A third workflow, `broken-links.yml`, runs lychee over the Markdown sources on push and is also red on `main`, because a few old external links in news items and posts are dead or block bots.
 
 ## Multi-language architecture (important)
 
